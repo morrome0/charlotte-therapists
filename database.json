@@ -1,0 +1,8 @@
+{
+  "therapists": [
+      {"name": "Susan", "surname": "Morrow", "image": "susan-morrow.jpg"},
+      {"name": "Kellie", "surname": "Stinson", "image": "kallie-stinson.jpg"},
+      {"name": "Montina", "surname": "Myers-Galloway", "image": "montina-myers-gallaway.jpg"},
+      {"name": "Henry", "surname": "Jones", "image": "susan-morrow.jpg"}
+    ]
+}
