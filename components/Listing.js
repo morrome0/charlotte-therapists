@@ -5,6 +5,7 @@ import ListItemText from "@material-ui/core/ListItemText"
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import CardMedia from '@material-ui/core/CardMedia'
+import Chip from '@material-ui/core/Chip'
 
 const useStyles = makeStyles({
   root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
     margin: 0,
     color:"#0000008a",
     fontSize:"14px",
-    paddingBottom:14
+    paddingBottom:8
   },
   title: {
     fontSize:"16px"
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
     verticalAlign: 'top',
   },
   contentContainer: {
-    width: 380,
+    width: 480,
     height: 120,
     display:'inline-box',
     verticalAlign: 'top',
@@ -36,6 +37,11 @@ const useStyles = makeStyles({
   image: {
     width: '100%',
     borderRadius:'50%',
+  },
+  chip: {
+    position:'absolute',
+    top:15,
+    right:15,
   }
 
 });
@@ -50,16 +56,20 @@ const Listing = (props) => {
         <CardMedia image={'/therapist-images/' + props.image} className={classes.image} />
       </div>
       <ListItemText className={classes.contentContainer}>
+        <Typography  className={classes.subtitle} color="textSecondary">
+          Individual Therapy, Couples Therapy
+        </Typography>
         <Typography  className={classes.title} variant="h5" component="h2">
           {props.name} {props.surname}
         </Typography>
         <Typography  className={classes.subtitle} color="textSecondary">
-          Marriage Counselor
+          MSW, LCSW
         </Typography>
         <Typography variant="body2" component="p">
           Do you want help with your life, your work or your relationships? Let’s collaborate to lighten the obstacles to your best life! I offer individual therapy, couples therapy, crisis intervention, pre-marital coaching, family therapy, trauma-informed therapy, personal coaching, and work-life balance coaching. I use best practices that evolve clinically following advances in the research.
         </Typography>
       </ListItemText>
+      <Chip label="Verified" className={classes.chip} color="secondary"/>
     </ListItem>
   )
 }

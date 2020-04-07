@@ -4,10 +4,11 @@ import List from '@material-ui/core/List'
 
 const useStyles = makeStyles({
   root: {
-    width: "500px",
+    width: "600px",
     background: 'white',
     overflow: 'auto',
-    maxHeight:'84vh', // TO-DO: Make this height dynamic based on header after component mounts
+    display: 'inline-block',
+    maxHeight:'90vh', // TO-DO: Make this height dynamic based on header after component mounts
   },
 });
 

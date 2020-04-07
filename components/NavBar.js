@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 
 const NavBar = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="relative">
       <Toolbar>
         <h1>Charlotte Therapists</h1>
       </Toolbar>

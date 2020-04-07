@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import getTherapists from "../data"
 import NavBar from '../components/NavBar'
-import FilterBar from '../components/FilterBar'
 import ListingsContainer from '../components/ListingsContainer'
 import Listing from '../components/Listing'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 import Divider from '@material-ui/core/Divider'
+import MapContainer from '../components/MapContainer'
 
 const Home = props => (
   <div>
@@ -19,17 +19,15 @@ const Home = props => (
       // TO-DO move font loading to server side using custom _document.js
     </Head>
     <NavBar />
-    <FilterBar />
-    <Container>
-      <ListingsContainer>
-        {props.therapists.map(therapist => (
-            <div>
-              <Listing name={therapist.name} surname={therapist.surname} image={therapist.image} />
-              <Divider />
-            </div>
-        ))}
-      </ListingsContainer>
-    </Container>
+    <ListingsContainer>
+      {props.therapists.map(therapist => (
+          <div>
+            <Listing name={therapist.name} surname={therapist.surname} image={therapist.image} />
+            <Divider />
+          </div>
+      ))}
+    </ListingsContainer>
+    <MapContainer />
     <footer>
     </footer>
   </div>
