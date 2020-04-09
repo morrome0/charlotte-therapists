@@ -26,7 +26,7 @@ const MapInstance = props => {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDIMJcfY-RZqWOinuyarRlKXw1R_PPUg34'
+  apiKey: process.env.GOOGLE_MAPS_API_KEY
 })(MapInstance);
 
 //To-Do Secure API Key

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -350,7 +350,7 @@ const MapInstance = props => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(google_maps_react__WEBPACK_IMPORTED_MODULE_1__["GoogleApiWrapper"])({
-  apiKey: 'AIzaSyDIMJcfY-RZqWOinuyarRlKXw1R_PPUg34'
+  apiKey: "AIzaSyDIMJcfY-RZqWOinuyarRlKXw1R_PPUg34"
 })(MapInstance)); //To-Do Secure API Key
 
 /***/ }),
@@ -648,7 +648,7 @@ Home.getInitialProps = async function () {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
