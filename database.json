@@ -1,12 +1,13 @@
 {
   "therapists": [
-      {"name": "Susan", "surname": "Morrow", "image": "susan-morrow.jpg"},
-      {"name": "Kellie", "surname": "Stinson", "image": "kallie-stinson.jpg"},
-      {"name": "Montina", "surname": "Myers-Galloway", "image": "montina-myers-gallaway.jpg"},
-      {"name": "Henry", "surname": "Jones", "image": "susan-morrow.jpg"},
-      {"name": "Susan", "surname": "Morrow", "image": "susan-morrow.jpg"},
-      {"name": "Kellie", "surname": "Stinson", "image": "kallie-stinson.jpg"},
-      {"name": "Montina", "surname": "Myers-Galloway", "image": "montina-myers-gallaway.jpg"},
-      {"name": "Henry", "surname": "Jones", "image": "susan-morrow.jpg"}
+      {"id": "1", "name": "Susan", "surname": "Morrow", "image": "susan-morrow.jpg", "location": { "lat": 35.2089029,
+        "lng": -80.8534172}},
+      {"id": "2", "name": "Kellie", "surname": "Stinson", "image": "kallie-stinson.jpg",  "location": { "lat": 35.2219936, "lng": -80.8557504}},
+      {"id": "3", "name": "Montina", "surname": "Myers-Galloway", "image": "montina-myers-gallaway.jpg", "location": {"lat": 35.2028807, "lng": -80.8463633}},
+      {"id": "4", "name": "Henry", "surname": "Jones", "image": "susan-morrow.jpg"},
+      {"id": "5", "name": "Susan", "surname": "Morrow", "image": "susan-morrow.jpg"},
+      {"id": "6", "name": "Kellie", "surname": "Stinson", "image": "kallie-stinson.jpg"},
+      {"id": "7", "name": "Montina", "surname": "Myers-Galloway", "image": "montina-myers-gallaway.jpg"},
+      {"id": "8", "name": "Henry", "surname": "Jones", "image": "susan-morrow.jpg"}
     ]
 }

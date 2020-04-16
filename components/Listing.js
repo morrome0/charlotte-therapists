@@ -6,10 +6,47 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import CardMedia from '@material-ui/core/CardMedia'
 import Chip from '@material-ui/core/Chip'
+import Divider from '@material-ui/core/Divider'
+
+
+
+
+const Listing = props => {
+  const classes = useStyles()
+
+  return (
+    <div>
+      <ListItem className={classes.root} button selected={props.id == props.selected ? true : false} onClick={() => props.setSelected(props.id)}>
+        <div className={classes.imageContainer}>
+          <CardMedia image={'/therapist-images/' + props.image} className={classes.listingImage} />
+        </div>
+        <ListItemText className={classes.contentContainer}>
+          <Typography  className={classes.subtitle} color="textSecondary">
+            Individual Therapy, Couples Therapy
+          </Typography>
+          <Typography  className={classes.title} variant="h5" component="h2">
+            {props.name} {props.surname}
+          </Typography>
+          <Typography  className={classes.subtitle} color="textSecondary">
+            MSW, LCSW
+          </Typography>
+          <Typography variant="body2" component="p">
+            Do you want help with your life, your work or your relationships? Let’s collaborate to lighten the obstacles to your best life! I offer individual therapy, couples therapy, crisis intervention, pre-marital coaching, family therapy, trauma-informed therapy, personal coaching, and work-life balance coaching. I use best practices that evolve clinically following advances in the research.
+          </Typography>
+        </ListItemText>
+        <Chip label="Verified" className={classes.chip} color="secondary"/>
+      </ListItem>
+      <Divider />
+    </div>
+  )
+}
 
 const useStyles = makeStyles({
   root: {
     overflow: 'hidden',
+  },
+  selected: {
+    background:'red',
   },
   subtitle: {
     margin: 0,
@@ -34,7 +71,7 @@ const useStyles = makeStyles({
     verticalAlign: 'top',
     overflow:'hidden'
   },
-  image: {
+  listingImage: {
     width: '100%',
     borderRadius:'50%',
   },
@@ -45,33 +82,5 @@ const useStyles = makeStyles({
   }
 
 });
-
-
-const Listing = (props) => {
-  const classes = useStyles()
-
-  return (
-    <ListItem className={classes.root}>
-      <div className={classes.imageContainer}>
-        <CardMedia image={'/therapist-images/' + props.image} className={classes.image} />
-      </div>
-      <ListItemText className={classes.contentContainer}>
-        <Typography  className={classes.subtitle} color="textSecondary">
-          Individual Therapy, Couples Therapy
-        </Typography>
-        <Typography  className={classes.title} variant="h5" component="h2">
-          {props.name} {props.surname}
-        </Typography>
-        <Typography  className={classes.subtitle} color="textSecondary">
-          MSW, LCSW
-        </Typography>
-        <Typography variant="body2" component="p">
-          Do you want help with your life, your work or your relationships? Let’s collaborate to lighten the obstacles to your best life! I offer individual therapy, couples therapy, crisis intervention, pre-marital coaching, family therapy, trauma-informed therapy, personal coaching, and work-life balance coaching. I use best practices that evolve clinically following advances in the research.
-        </Typography>
-      </ListItemText>
-      <Chip label="Verified" className={classes.chip} color="secondary"/>
-    </ListItem>
-  )
-}
 
 export default Listing

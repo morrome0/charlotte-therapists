@@ -1,32 +1,57 @@
-import React from 'react'
-import { Map, GoogleApiWrapper } from 'google-maps-react'
+import React, { useEffect, useRef, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles({
+  root: {
+    display: 'inline-block',
+    height: '90vh',
+    width: 'calc(100vw - 600px)'
+  },
+});
 
-const mapStyles = {
-  width: 'calc(100vw - 600px)',
-  height: '90vh',
-};
+const Map = props => {
+  const classes = useStyles()
+  const [ map, setMap ] = useState({})
+  const [ markers, setMarkers ] = useState([])
+  const mapRef = useRef(null)
 
-const containerStyle = {
-  width: '100%',
-  height: '100%',
-  position: 'relative',
-}
+  const initMap = () => {
+    const map = new google.maps.Map(mapRef.current, {
+      center: { lat: 35.2271, lng: -80.8431 },
+      zoom: 12
+    });
+    setMap(map)
 
-const MapInstance = props => {
+    const markers = []
+    props.therapists.forEach((therapist) => {
+      if (therapist.location) {
+        let marker = new google.maps.Marker({position: therapist.location , map: map})
+        markers.push({"id": therapist.id, "object": marker})
+      }
+    })
+    setMarkers(markers)
+  }
+
+  useEffect(() => {
+    initMap()
+    return () => {
+    }
+  }, [])
+
+  const changeSelectedMarker = () => {
+    markers.forEach((marker) => marker.object.setAnimation(null))
+    markers.find((marker) => marker.id == props.selected).object.setAnimation(google.maps.Animation.BOUNCE)
+  }
+
+  useEffect(() => {
+    if (props.selected) changeSelectedMarker()
+    return () => {
+    }
+  }, [props.selected])
+
   return (
-    <Map
-      google={props.google}
-      zoom={12}
-      style={mapStyles}
-      containerStyle={containerStyle}
-      initialCenter={{ lat: 35.2271, lng: -80.8431}}
-    />
+    <div ref={mapRef} className={classes.root}></div>
   )
 }
 
-export default GoogleApiWrapper({
-  apiKey: process.env.GOOGLE_MAPS_API_KEY
-})(MapInstance);
-
-//To-Do Secure API Key
+export default Map

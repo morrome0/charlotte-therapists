@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1035,14 +1035,98 @@ const ESCAPE_LOOKUP={'&':'\\u0026','>':'\\u003e','<':'\\u003c','\u2028':'\\u2028
 
 /***/ }),
 
-/***/ 2:
+/***/ "./node_modules/next/document.js":
 /*!***************************************!*\
-  !*** multi next/dist/pages/_document ***!
+  !*** ./node_modules/next/document.js ***!
   \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next/dist/pages/_document */"./node_modules/next/dist/pages/_document.js");
+module.exports = __webpack_require__(/*! ./dist/pages/_document */ "./node_modules/next/dist/pages/_document.js")
+
+
+/***/ }),
+
+/***/ "./pages/_document.js":
+/*!****************************!*\
+  !*** ./pages/_document.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
+/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/miller/Code/charlotte-therapists/pages/_document.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
+  render() {
+    return __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Html"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 7
+      }
+    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 9
+      }
+    }, __jsx("script", {
+      src: 'https://maps.googleapis.com/maps/api/js?key=' + "AIzaSyDIMJcfY-RZqWOinuyarRlKXw1R_PPUg34",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 9
+      }
+    })), __jsx("body", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10,
+        columnNumber: 9
+      }
+    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 11
+      }
+    }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12,
+        columnNumber: 11
+      }
+    })));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (MyDocument);
+
+/***/ }),
+
+/***/ 0:
+/*!*********************************************!*\
+  !*** multi private-next-pages/_document.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! private-next-pages/_document.js */"./pages/_document.js");
 
 
 /***/ }),
