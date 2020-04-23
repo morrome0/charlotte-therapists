@@ -1,11 +1,8 @@
-import Map from '../components/Map2'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import { spacing, palette } from '@material-ui/system'
+import Box from '@material-ui/core/Box'
 
 const Dev = props => (
-  <div>
-    <CssBaseline />
-    <Map />
-  </div>
+  <Box height={100} bgcolor="grey.300"/>
 )
 
 export default Dev

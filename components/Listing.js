@@ -9,14 +9,17 @@ import Chip from '@material-ui/core/Chip'
 import Divider from '@material-ui/core/Divider'
 
 
-
-
 const Listing = props => {
   const classes = useStyles()
 
+  function handleClick() {
+    props.setSelected(props.id)
+    if (!props.showMidbar)props.setShowMidbar(true)
+  }
+
   return (
     <div>
-      <ListItem className={classes.root} button selected={props.id == props.selected ? true : false} onClick={() => props.setSelected(props.id)}>
+      <ListItem className={classes.root} button selected={props.id == props.selected ? true : false } onClick={handleClick}>
         <div className={classes.imageContainer}>
           <CardMedia image={'/therapist-images/' + props.image} className={classes.listingImage} />
         </div>
@@ -58,14 +61,14 @@ const useStyles = makeStyles({
     fontSize:"16px"
   },
   imageContainer: {
-    width: 120,
-    height: 120,
+    width: 110,
+    height: 110,
     padding:18,
     display:'inline-box',
     verticalAlign: 'top',
   },
   contentContainer: {
-    width: 480,
+    width: 390,
     height: 120,
     display:'inline-box',
     verticalAlign: 'top',
@@ -79,7 +82,7 @@ const useStyles = makeStyles({
     position:'absolute',
     top:15,
     right:15,
-  }
+  },
 
 });
 

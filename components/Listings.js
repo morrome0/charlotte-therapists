@@ -5,11 +5,10 @@ import Listing from "./Listing"
 
 const useStyles = makeStyles({
   root: {
-    width: "600px",
+    width: "500px",
     background: 'white',
     overflow: 'auto',
     display: 'inline-block',
-    maxHeight:'90vh', // TO-DO: Make this height dynamic based on header after component mounts
     padding:0,
   },
 });
@@ -21,7 +20,7 @@ const ListingsContainer = props => {
   return (
     <List className={classes.root}>
       {props.therapists.map(therapist => (
-          <Listing key={therapist.id} id={therapist.id} name={therapist.name} surname={therapist.surname} image={therapist.image} selected= {props.selected} setSelected={props.setSelected}/>
+          <Listing key={therapist.id} id={therapist.id} name={therapist.name} surname={therapist.surname} image={therapist.image} selected= {props.selected} setSelected={props.setSelected} showMidbar={props.showMidbar} setShowMidbar={props.setShowMidbar}/>
       ))}
     </List>
   )

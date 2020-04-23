@@ -134,22 +134,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const Listing = props => {
   const classes = useStyles();
+
+  function handleClick() {
+    props.setSelected(props.id);
+    if (!props.showMidbar) props.setShowMidbar(true);
+  }
+
   return __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: classes.root,
     button: true,
     selected: props.id == props.selected ? true : false,
-    onClick: () => props.setSelected(props.id),
+    onClick: handleClick,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 22,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -157,7 +163,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 23,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -166,7 +172,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 24,
       columnNumber: 11
     }
   })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -174,7 +180,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -183,7 +189,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 27,
       columnNumber: 11
     }
   }, "Individual Therapy, Couples Therapy"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -193,7 +199,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 30,
       columnNumber: 11
     }
   }, props.name, " ", props.surname), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -202,7 +208,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 33,
       columnNumber: 11
     }
   }, "MSW, LCSW"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -211,7 +217,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 36,
       columnNumber: 11
     }
   }, "Do you want help with your life, your work or your relationships? Let\u2019s collaborate to lighten the obstacles to your best life! I offer individual therapy, couples therapy, crisis intervention, pre-marital coaching, family therapy, trauma-informed therapy, personal coaching, and work-life balance coaching. I use best practices that evolve clinically following advances in the research.")), __jsx(_material_ui_core_Chip__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -221,14 +227,14 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 40,
       columnNumber: 9
     }
   })), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 42,
       columnNumber: 7
     }
   }));
@@ -251,14 +257,14 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     fontSize: "16px"
   },
   imageContainer: {
-    width: 120,
-    height: 120,
+    width: 110,
+    height: 110,
     padding: 18,
     display: 'inline-box',
     verticalAlign: 'top'
   },
   contentContainer: {
-    width: 480,
+    width: 390,
     height: 120,
     display: 'inline-box',
     verticalAlign: 'top',
@@ -302,12 +308,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
   root: {
-    width: "600px",
+    width: "500px",
     background: 'white',
     overflow: 'auto',
     display: 'inline-block',
-    maxHeight: '90vh',
-    // TO-DO: Make this height dynamic based on header after component mounts
     padding: 0
   }
 });
@@ -319,7 +323,7 @@ const ListingsContainer = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 21,
       columnNumber: 5
     }
   }, props.therapists.map(therapist => __jsx(_Listing__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -330,10 +334,12 @@ const ListingsContainer = props => {
     image: therapist.image,
     selected: props.selected,
     setSelected: props.setSelected,
+    showMidbar: props.showMidbar,
+    setShowMidbar: props.setShowMidbar,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 23,
       columnNumber: 11
     }
   })));
@@ -362,9 +368,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
   root: {
-    display: 'inline-block',
-    height: '90vh',
-    width: 'calc(100vw - 600px)'
+    flexGrow: 1
   }
 });
 
@@ -412,7 +416,10 @@ const Map = props => {
 
   const changeSelectedMarker = () => {
     markers.forEach(marker => marker.object.setAnimation(null));
-    markers.find(marker => marker.id == props.selected).object.setAnimation(google.maps.Animation.BOUNCE);
+
+    if (props.therapists.find(therapist => therapist.id == props.selected).location) {
+      markers.find(marker => marker.id == props.selected).object.setAnimation(google.maps.Animation.BOUNCE);
+    }
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
@@ -425,7 +432,7 @@ const Map = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 5
     }
   });
@@ -435,9 +442,9 @@ const Map = props => {
 
 /***/ }),
 
-/***/ "./components/NavBar.js":
+/***/ "./components/Midbar.js":
 /*!******************************!*\
-  !*** ./components/NavBar.js ***!
+  !*** ./components/Midbar.js ***!
   \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -446,46 +453,225 @@ const Map = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/AppBar */ "@material-ui/core/AppBar");
-/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/ToolBar */ "@material-ui/core/ToolBar");
-/* harmony import */ var _material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/NavBar.js";
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Container */ "@material-ui/core/Container");
+/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Box */ "@material-ui/core/Box");
+/* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Close */ "@material-ui/icons/Close");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Avatar */ "@material-ui/core/Avatar");
+/* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Divider */ "@material-ui/core/Divider");
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9__);
+var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Midbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
-const NavBar = () => {
-  return __jsx(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    position: "relative",
+
+
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
+  root: {
+    position: 'relative',
+    display: 'inline-block',
+    height: '100vh',
+    width: '500px',
+    background: "white"
+  },
+  hide: {
+    display: "none"
+  },
+  closeButton: {
+    position: 'absolute',
+    right: 5,
+    top: 5,
+    color: "grey"
+  },
+  imageContainer: {
+    display: "inline-block",
+    verticalAlign: "bottom"
+  },
+  image: {
+    width: "100px",
+    height: "100px"
+  }
+});
+
+const Midbar = props => {
+  const classes = useStyles();
+  return __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: props.showMidbar ? classes.root : classes.hide,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 43,
       columnNumber: 5
     }
-  }, __jsx(_material_ui_core_ToolBar__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    mt: 3,
+    mx: 3,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 44,
       columnNumber: 7
     }
-  }, __jsx("h1", {
+  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: classes.imageContainer,
+    m: 3,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 9
+      lineNumber: 46,
+      columnNumber: 13
     }
-  }, "Charlotte Therapists")));
+  }, __jsx(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    src: '/therapist-images/' + props.therapist.image,
+    className: classes.image,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 15
+    }
+  })), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    fontSize: "24px",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 15
+    }
+  }, props.therapist.name, " ", props.therapist.surname), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    color: "textSecondary",
+    textAlign: "center",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 15
+    }
+  }, "Couples therapist")), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    mt: 3,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 13
+    }
+  }, "Do you want help with your life, your work or your relationships? Let\u2019s collaborate to lighten the obstacles to your best life!"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    mt: 3,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    variant: "contained",
+    color: "secondary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 15
+    }
+  }, "Schedule a Conversation")), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    mt: 3,
+    color: "primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 13
+    }
+  }, "Experience: 30 Years"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    mt: 3,
+    color: "primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 13
+    }
+  }, "Price: $180 per 1 hour session"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    mt: 3,
+    color: "primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80,
+      columnNumber: 13
+    }
+  }, "Education: MSW, LCSW"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    mt: 3,
+    color: "primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 13
+    }
+  }, "Methodology: Emotionally Focused Therapy"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    textAlign: "center",
+    mt: 3,
+    color: "primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88,
+      columnNumber: 13
+    }
+  }, "Specialization: Depression, Anxiety, Marriage"), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    "aria-label": "close",
+    className: classes.closeButton,
+    onClick: () => props.setShowMidbar(false),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 15
+    }
+  }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (NavBar);
+/* harmony default export */ __webpack_exports__["default"] = (Midbar);
 
 /***/ }),
 
@@ -531,18 +717,19 @@ module.exports = JSON.parse("{\"therapists\":[{\"id\":\"1\",\"name\":\"Susan\",\
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data */ "./data.js");
-/* harmony import */ var _components_NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/NavBar */ "./components/NavBar.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data */ "./data.js");
 /* harmony import */ var _components_Listings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Listings */ "./components/Listings.js");
 /* harmony import */ var _components_Listing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Listing */ "./components/Listing.js");
-/* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "@material-ui/core/CssBaseline");
-/* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Container */ "@material-ui/core/Container");
-/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Map */ "./components/Map.js");
+/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Container */ "@material-ui/core/Container");
+/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Map */ "./components/Map.js");
+/* harmony import */ var _components_Midbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Midbar */ "./components/Midbar.js");
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/pages/index.js";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -553,47 +740,65 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
+  root: {
+    display: "flex",
+    height: "100vh"
+  }
+});
 
 const Home = props => {
+  const classes = useStyles();
   const {
     0: selected,
     1: setSelected
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
+    0: selectedTherapist,
+    1: setSelectedTherapist
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.therapists[1]);
+  const {
+    0: showMidbar,
+    1: setShowMidbar
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+
+  const getSelectedTherapist = () => {
+    return props.therapists.find(therapist => therapist.id == selected);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (selected) setSelectedTherapist(getSelectedTherapist());
+    return () => {};
+  }, [selected]);
   return __jsx("div", {
+    className: classes.root,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 38,
       columnNumber: 5
     }
-  }, __jsx(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 7
-    }
-  }), __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 39,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 40,
       columnNumber: 9
     }
-  }, "Create Next App"), __jsx("link", {
+  }, "Charlotte Therapists"), __jsx("link", {
     rel: "icon",
     href: "/favicon.ico",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 41,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -602,7 +807,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 42,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -611,47 +816,52 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 43,
       columnNumber: 9
     }
-  }), "// TO-DO move font loading to server side using custom _document.js"), __jsx(_components_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 7
-    }
-  }), __jsx(_components_Listings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), "// TO-DO move font loading to server side using custom _document.js"), __jsx(_components_Listings__WEBPACK_IMPORTED_MODULE_4__["default"], {
     therapists: props.therapists,
     selected: selected,
     setSelected: setSelected,
+    showMidbar: showMidbar,
+    setShowMidbar: setShowMidbar,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 46,
       columnNumber: 7
     }
-  }), __jsx(_components_Map__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_components_Midbar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    therapist: selectedTherapist,
+    showMidbar: showMidbar,
+    setShowMidbar: setShowMidbar,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 7
+    }
+  }), __jsx(_components_Map__WEBPACK_IMPORTED_MODULE_7__["default"], {
     therapists: props.therapists,
     selected: selected,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 48,
       columnNumber: 7
     }
   }), __jsx("footer", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 49,
       columnNumber: 7
     }
   }));
 };
 
 Home.getInitialProps = async function () {
-  let therapists = Object(_data__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  let therapists = Object(_data__WEBPACK_IMPORTED_MODULE_3__["default"])();
   return {
     therapists: therapists
   };
@@ -673,14 +883,25 @@ module.exports = __webpack_require__(/*! /Users/miller/Code/charlotte-therapists
 
 /***/ }),
 
-/***/ "@material-ui/core/AppBar":
+/***/ "@material-ui/core/Avatar":
 /*!*******************************************!*\
-  !*** external "@material-ui/core/AppBar" ***!
+  !*** external "@material-ui/core/Avatar" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/AppBar");
+module.exports = require("@material-ui/core/Avatar");
+
+/***/ }),
+
+/***/ "@material-ui/core/Box":
+/*!****************************************!*\
+  !*** external "@material-ui/core/Box" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Box");
 
 /***/ }),
 
@@ -728,17 +949,6 @@ module.exports = require("@material-ui/core/Container");
 
 /***/ }),
 
-/***/ "@material-ui/core/CssBaseline":
-/*!************************************************!*\
-  !*** external "@material-ui/core/CssBaseline" ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/CssBaseline");
-
-/***/ }),
-
 /***/ "@material-ui/core/Divider":
 /*!********************************************!*\
   !*** external "@material-ui/core/Divider" ***!
@@ -747,6 +957,17 @@ module.exports = require("@material-ui/core/CssBaseline");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Divider");
+
+/***/ }),
+
+/***/ "@material-ui/core/IconButton":
+/*!***********************************************!*\
+  !*** external "@material-ui/core/IconButton" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/IconButton");
 
 /***/ }),
 
@@ -783,17 +1004,6 @@ module.exports = require("@material-ui/core/ListItemText");
 
 /***/ }),
 
-/***/ "@material-ui/core/ToolBar":
-/*!********************************************!*\
-  !*** external "@material-ui/core/ToolBar" ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/ToolBar");
-
-/***/ }),
-
 /***/ "@material-ui/core/Typography":
 /*!***********************************************!*\
   !*** external "@material-ui/core/Typography" ***!
@@ -813,6 +1023,17 @@ module.exports = require("@material-ui/core/Typography");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/styles");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Close":
+/*!*******************************************!*\
+  !*** external "@material-ui/icons/Close" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Close");
 
 /***/ }),
 

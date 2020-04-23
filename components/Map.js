@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   root: {
-    display: 'inline-block',
-    height: '90vh',
-    width: 'calc(100vw - 600px)'
+    flexGrow:1,
   },
 });
 
@@ -38,9 +36,12 @@ const Map = props => {
     }
   }, [])
 
+
   const changeSelectedMarker = () => {
     markers.forEach((marker) => marker.object.setAnimation(null))
-    markers.find((marker) => marker.id == props.selected).object.setAnimation(google.maps.Animation.BOUNCE)
+    if (props.therapists.find((therapist) => therapist.id == props.selected).location) {
+      markers.find((marker) => marker.id == props.selected).object.setAnimation(google.maps.Animation.BOUNCE)
+    }
   }
 
   useEffect(() => {
