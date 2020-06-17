@@ -4,21 +4,24 @@ import Head from 'next/head'
 import getTherapists from "../data"
 import Listings from '../components/Listings'
 import Listing from '../components/Listing'
-import Container from '@material-ui/core/Container'
+import NavBar from '../components/NavBar'
+import Box from '@material-ui/core/Box'
 import Map from '../components/Map'
 import Midbar from '../components/Midbar'
 
+
 const useStyles = makeStyles({
-  root: {
+  main: {
     display:"flex",
-    height:"100vh",
-  },
+    height:"calc(100vh - 60px)",
+    overflowY:"hidden"
+  }
 });
 
 const Home = props => {
   const classes = useStyles()
   const [selected, setSelected] = useState(null)
-  const [selectedTherapist, setSelectedTherapist] = useState(props.therapists[1])
+  const [selectedTherapist, setSelectedTherapist] = useState(props.therapists[0])
   const [showMidbar, setShowMidbar] = useState(true)
 
   const getSelectedTherapist = () => {
@@ -43,11 +46,16 @@ const Home = props => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         // TO-DO move font loading to server side using custom _document.js
       </Head>
-      <Listings therapists={props.therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
-      <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
-      <Map therapists={props.therapists} selected= {selected}/>
-      <footer>
-      </footer>
+
+      <NavBar />
+
+      <Box className={classes.main}>
+        <Listings therapists={props.therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+        <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+        <Map therapists={props.therapists} selected= {selected}/>
+      </Box>
+
+
     </div>
   )
 }

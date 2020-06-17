@@ -2,20 +2,26 @@ import React, { useEffect } from "react"
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
+import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import Chip from '@material-ui/core/Chip'
 import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
 import Divider from '@material-ui/core/Divider'
+import Slide from '@material-ui/core/Slide'
 
 const useStyles = makeStyles({
   root: {
     position: 'relative',
     display: 'inline-block',
-    height: '100vh',
     width: '500px',
-    background: "white"
+    background: '#fff',
+    boxShadow: '0 0 14px rgba(0,0,0,0.25), 0 0 6px rgba(0,0,0,0.22)',
+    zIndex:10,
+    overflow: 'auto',
   },
   hide: {
     display: "none",
@@ -26,13 +32,14 @@ const useStyles = makeStyles({
    top: 5,
    color: "grey",
  },
- imageContainer: {
-   display: "inline-block",
-   verticalAlign: "bottom"
- },
  image: {
    width: "100px",
    height: "100px"
+ },
+ topImage: {
+   width: "100%",
+   height: "200px",
+   objectFit: "cover"
  },
 });
 
@@ -40,63 +47,80 @@ const Midbar = props => {
   const classes = useStyles()
 
   return (
-    <Box className={props.showMidbar ? classes.root : classes.hide}>
-      <Box mt={3} mx={3} display="flex" flexDirection="column" alignItems="center">
+      <Box px={4} className={props.showMidbar ? classes.root : classes.hide}>
 
-            <Box className={classes.imageContainer} m={3}>
-              <Avatar src={'/therapist-images/' + props.therapist.image} className={classes.image}/>
+        <Box display="flex" flexDirection="column" alignItems="center" pb={2}>
+          <Box mt={4}>
+            <Avatar src={'/therapist-images/' + props.therapist.image} className={classes.image}/>
+          </Box>
+
+          <Box fontSize="24px" mt={2}>
+            <Typography variant="h2">{props.therapist.name} {props.therapist.surname}</Typography>
+          </Box>
+
+          <Box color="textSecondary" pt={1}>
+            <Typography variant="h4">{props.therapist.title}</Typography>
+          </Box>
+
+          <Box pt={2} >
+            <Box display="inline-block" pr={1}>
+              <Button href={"mailto:" + props.therapist.email} variant="contained" color="secondary">Email</Button>
             </Box>
-
-            <Box>
-
-              <Box textAlign="center" fontSize="24px">
-                {props.therapist.name} {props.therapist.surname}
-              </Box>
-
-              <Box color="textSecondary" textAlign="center">
-                Couples therapist
-              </Box>
+            <Box display="inline-block">
+              <Button href={props.therapist.website} target="_blank " variant="contained" color="secondary">Website</Button>
             </Box>
+          </Box>
+        </Box>
 
+        <Box py={1.5}>
+          <Box pb={1}>
+            <Typography color="textSecondary" variant="h5">About</Typography>
+          </Box>
+          <Typography variant="body1">
+            {props.therapist.about}
+          </Typography>
+        </Box>
 
-            <Box textAlign="center" mt={3}>
-              Do you want help with your life, your work or your relationships? Let’s collaborate to lighten the obstacles to your best life!
-            </Box>
+        <Box py={1.5}>
+          <Box pb={1}>
+            <Typography color="textSecondary" variant="h5">Specialty Areas</Typography>
+          </Box>
+          <Typography variant="body1">
+            {props.therapist.specialties}
+          </Typography>
+        </Box>
 
-            <Box mt={3}>
-              <Button variant="contained" color="secondary">
-                Schedule a Conversation
-              </Button>
-            </Box>
+        <Box py={1.5}>
+          <Box pb={1}>
+            <Typography color="textSecondary" variant="h5">Treatment Approaches</Typography>
+          </Box>
+          <Typography variant="body1">
+            {props.therapist.approaches}
+          </Typography>
+        </Box>
 
-            <Box textAlign="center" mt={3} color="primary">
-                Experience: 30 Years
-            </Box>
+        <Box py={1.5}>
+          <Box pb={1}>
+            <Typography color="textSecondary" variant="h5">Payment</Typography>
+          </Box>
+          <Typography variant="body1">
+            {props.therapist.payment}
+          </Typography>
+        </Box>
 
-            <Box textAlign="center" mt={3} color="primary">
-                Price: $180 per 1 hour session
-            </Box>
-
-            <Box textAlign="center" mt={3} color="primary">
-                Education: MSW, LCSW
-            </Box>
-
-            <Box textAlign="center" mt={3} color="primary">
-                Methodology: Emotionally Focused Therapy
-            </Box>
-
-            <Box textAlign="center" mt={3} color="primary">
-                Specialization: Depression, Anxiety, Marriage
-            </Box>
-
-            <IconButton aria-label="close" className={classes.closeButton} onClick={() => props.setShowMidbar(false)}>
-              <CloseIcon />
-            </IconButton>
-
+        <Box py={1.5}>
+          <Box pb={1}>
+            <Typography color="textSecondary" variant="h5">Clients</Typography>
+          </Box>
+          <Typography variant="body1">
+            {props.therapist.clients}
+          </Typography>
+        </Box>
+        <IconButton aria-label="close" className={classes.closeButton} onClick={() => props.setShowMidbar(false)}>
+          <CloseIcon />
+        </IconButton>
       </Box>
-    </Box>
   )
-
 }
 
 export default Midbar

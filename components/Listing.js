@@ -5,8 +5,10 @@ import ListItemText from "@material-ui/core/ListItemText"
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import CardMedia from '@material-ui/core/CardMedia'
-import Chip from '@material-ui/core/Chip'
+import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
+import Icon from '@material-ui/core/Icon'
+import Grid from '@material-ui/core/Grid'
 
 
 const Listing = props => {
@@ -19,25 +21,45 @@ const Listing = props => {
 
   return (
     <div>
-      <ListItem className={classes.root} button selected={props.id == props.selected ? true : false } onClick={handleClick}>
+      <ListItem className={classes.root} button selected={props.therapist.id == props.selected ? true : false } onClick={handleClick}>
         <div className={classes.imageContainer}>
-          <CardMedia image={'/therapist-images/' + props.image} className={classes.listingImage} />
+          <CardMedia image={'/therapist-images/' + props.therapist.image} className={classes.listingImage} />
         </div>
         <ListItemText className={classes.contentContainer}>
-          <Typography  className={classes.subtitle} color="textSecondary">
-            Individual Therapy, Couples Therapy
-          </Typography>
-          <Typography  className={classes.title} variant="h5" component="h2">
-            {props.name} {props.surname}
-          </Typography>
-          <Typography  className={classes.subtitle} color="textSecondary">
-            MSW, LCSW
-          </Typography>
-          <Typography variant="body2" component="p">
-            Do you want help with your life, your work or your relationships? Let’s collaborate to lighten the obstacles to your best life! I offer individual therapy, couples therapy, crisis intervention, pre-marital coaching, family therapy, trauma-informed therapy, personal coaching, and work-life balance coaching. I use best practices that evolve clinically following advances in the research.
-          </Typography>
+          <Box py={1} >
+            <Typography style={{fontSize:18}}>
+              {props.therapist.name} {props.therapist.surname}
+            </Typography>
+            <Typography variant="h4" className={classes.subtitle} color="textSecondary">
+              {props.therapist.title}
+            </Typography>
+          </Box>
+
+          <Box pl={1}>
+            <Grid container>
+              <Grid item xs={6}>
+                <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
+                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>school</Icon> {props.therapist.credentials}
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
+                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.clients}
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
+                  <span style={{fontSize: 14, fontWeight: 800}}>$</span> {props.therapist.payment}
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
+                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>work</Icon> {props.therapist.experience} years experience
+                </Typography>
+              </Grid>
+            </Grid>
+          </Box>
         </ListItemText>
-        <Chip label="Verified" className={classes.chip} color="secondary"/>
       </ListItem>
       <Divider />
     </div>
@@ -53,22 +75,16 @@ const useStyles = makeStyles({
   },
   subtitle: {
     margin: 0,
-    color:"#0000008a",
-    fontSize:"14px",
-    paddingBottom:8
-  },
-  title: {
-    fontSize:"16px"
   },
   imageContainer: {
-    width: 110,
-    height: 110,
+    width: 125,
+    height: 125,
     padding:18,
     display:'inline-box',
     verticalAlign: 'top',
   },
   contentContainer: {
-    width: 390,
+    width: 375,
     height: 120,
     display:'inline-box',
     verticalAlign: 'top',

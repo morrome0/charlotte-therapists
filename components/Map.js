@@ -16,7 +16,14 @@ const Map = props => {
   const initMap = () => {
     const map = new google.maps.Map(mapRef.current, {
       center: { lat: 35.2271, lng: -80.8431 },
-      zoom: 12
+      zoom: 12,
+      disableDefaultUI: true,
+      styles: [{
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+        ]}]
     });
     setMap(map)
 
