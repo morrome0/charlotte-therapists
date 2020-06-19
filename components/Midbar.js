@@ -13,8 +13,15 @@ import Avatar from '@material-ui/core/Avatar'
 import Divider from '@material-ui/core/Divider'
 import Slide from '@material-ui/core/Slide'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
+    [theme.breakpoints.only('xs')]: {
+      position: 'absolute',
+      width:'100%',
+      boxShadow: 'none',
+      zIndex:100,
+    },
+    height: '100%',
     position: 'relative',
     display: 'inline-block',
     width: '500px',
@@ -41,7 +48,7 @@ const useStyles = makeStyles({
    height: "200px",
    objectFit: "cover"
  },
-});
+}));
 
 const Midbar = props => {
   const classes = useStyles()
@@ -104,7 +111,7 @@ const Midbar = props => {
             <Typography color="textSecondary" variant="h5">Payment</Typography>
           </Box>
           <Typography variant="body1">
-            {props.therapist.payment}
+            ${props.therapist.payment}
           </Typography>
         </Box>
 

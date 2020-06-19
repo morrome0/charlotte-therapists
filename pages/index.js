@@ -15,6 +15,9 @@ const useStyles = makeStyles({
     display:"flex",
     height:"calc(100vh - 60px)",
     overflowY:"hidden"
+  },
+  mapbox: {
+    flexgrow:1
   }
 });
 
@@ -52,7 +55,7 @@ const Home = props => {
       <Box className={classes.main}>
         <Listings therapists={props.therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
         <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
-        <Map therapists={props.therapists} selected= {selected}/>
+        <Box display={{xs: 'none', sm:'block'}} style={{flexGrow: '1'}}><Map therapists={props.therapists} selected= {selected}/></Box>
       </Box>
 
 

@@ -37,22 +37,22 @@ const Listing = props => {
 
           <Box pl={1}>
             <Grid container>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
                   <Icon style={{fontSize: 14, verticalAlign:"middle"}}>school</Icon> {props.therapist.credentials}
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
                   <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.clients}
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
                   <span style={{fontSize: 14, fontWeight: 800}}>$</span> {props.therapist.payment}
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
                   <Icon style={{fontSize: 14, verticalAlign:"middle"}}>work</Icon> {props.therapist.experience} years experience
                 </Typography>

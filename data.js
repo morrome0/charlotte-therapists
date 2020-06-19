@@ -1,4 +1,4 @@
-import data from './database.json'
+import data from './database-dev.json'
 // import fetch from 'isomorphic-unfetch';
 
 export default function getTherapists() {
