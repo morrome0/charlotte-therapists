@@ -1085,24 +1085,24 @@ const NavBar = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getTherapists; });
-/* harmony import */ var _database_dev_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./database-dev.json */ "./database-dev.json");
-var _database_dev_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./database-dev.json */ "./database-dev.json", 1);
+/* harmony import */ var _database_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./database.json */ "./database.json");
+var _database_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./database.json */ "./database.json", 1);
  // import fetch from 'isomorphic-unfetch';
 
 function getTherapists() {
-  return _database_dev_json__WEBPACK_IMPORTED_MODULE_0__.therapists;
+  return _database_json__WEBPACK_IMPORTED_MODULE_0__.therapists;
 }
 
 /***/ }),
 
-/***/ "./database-dev.json":
-/*!***************************!*\
-  !*** ./database-dev.json ***!
-  \***************************/
+/***/ "./database.json":
+/*!***********************!*\
+  !*** ./database.json ***!
+  \***********************/
 /*! exports provided: therapists, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"therapists\":[{\"id\":1,\"name\":\"Susan\",\"surname\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Marriage\",\"approaches\":\"Emotionally-Focused Therapy, Cognitive Behavioral Therapy\",\"payment\":\"180 per session\",\"clients\":\"Individuals, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"30\"},{\"id\":2,\"name\":\"Kellie\",\"surname\":\"Stinson\",\"image\":\"kallie-stinson.jpg\",\"location\":{\"lat\":35.2219936,\"lng\":-80.8557504},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Marriage\",\"approaches\":\"Emotionally-Focused Therapy, Cognitive Behavioral Therapy\",\"payment\":\"130 per session\",\"clients\":\"Individuals, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"11\"},{\"id\":3,\"name\":\"Montina\",\"surname\":\"Myers-Galloway\",\"image\":\"montina-myers-gallaway.jpg\",\"location\":{\"lat\":35.2028807,\"lng\":-80.8463633},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Marriage\",\"approaches\":\"Emotionally-Focused Therapy, Cognitive Behavioral Therapy\",\"payment\":\"150 per session\",\"clients\":\"Individuals, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"7\"},{\"id\":4,\"name\":\"Susan\",\"surname\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Marriage\",\"approaches\":\"Emotionally-Focused Therapy, Cognitive Behavioral Therapy\",\"payment\":\"165 per session\",\"clients\":\"Individuals, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"3\"},{\"id\":5,\"name\":\"Kellie\",\"surname\":\"Stinson\",\"image\":\"kallie-stinson.jpg\",\"location\":{\"lat\":35.2219936,\"lng\":-80.8557504},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Marriage\",\"approaches\":\"Emotionally-Focused Therapy, Cognitive Behavioral Therapy\",\"payment\":\"180 per session\",\"clients\":\"Individuals, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"12\"},{\"id\":6,\"name\":\"Montina\",\"surname\":\"Myers-Galloway\",\"image\":\"montina-myers-gallaway.jpg\",\"location\":{\"lat\":35.2028807,\"lng\":-80.8463633},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Marriage\",\"approches\":\"Emotionally-Focused Therapy, Cognitive Behavioral Therapy\",\"payment\":\"180 per session\",\"clients\":\"Individuals, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"30\"}]}");
+module.exports = JSON.parse("{\"therapists\":[{\"id\":1,\"name\":\"Susan\",\"surname\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":\"Depression, Anxiety, Stress, Couples Therapy\",\"approaches\":\"Emotionally-Focused Therapy, Gottman Method, Cognitive Behavioral Therapy, Family Systems Therapy, ACT\",\"payment\":\"185 per session\",\"clients\":\"Individuals, Couples, Families\",\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"credentials\":\"MSW, LCSW\",\"experience\":\"30\"}]}");
 
 /***/ }),
 
