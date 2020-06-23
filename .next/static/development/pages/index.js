@@ -9,22 +9,25 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js");
-/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/esm/ListItemText/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
-/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "./node_modules/@material-ui/core/esm/CardMedia/index.js");
-/* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Box */ "./node_modules/@material-ui/core/esm/Box/index.js");
-/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Icon */ "./node_modules/@material-ui/core/esm/Icon/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js");
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/esm/ListItemText/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "./node_modules/@material-ui/core/esm/CardMedia/index.js");
+/* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Box */ "./node_modules/@material-ui/core/esm/Box/index.js");
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js");
+/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Icon */ "./node_modules/@material-ui/core/esm/Icon/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
+
+
 var _this = undefined,
     _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Listing.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
@@ -52,7 +55,7 @@ var Listing = function Listing(props) {
       lineNumber: 23,
       columnNumber: 5
     }
-  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: classes.root,
     button: true,
     selected: props.therapist.id == props.selected ? true : false,
@@ -71,7 +74,7 @@ var Listing = function Listing(props) {
       lineNumber: 25,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7__["default"], {
     image: '/therapist-images/' + props.therapist.image,
     className: classes.listingImage,
     __self: _this,
@@ -80,7 +83,7 @@ var Listing = function Listing(props) {
       lineNumber: 26,
       columnNumber: 11
     }
-  })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.contentContainer,
     __self: _this,
     __source: {
@@ -88,7 +91,7 @@ var Listing = function Listing(props) {
       lineNumber: 28,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
     py: 1,
     __self: _this,
     __source: {
@@ -96,7 +99,7 @@ var Listing = function Listing(props) {
       lineNumber: 29,
       columnNumber: 11
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
     style: {
       fontSize: 18
     },
@@ -106,7 +109,7 @@ var Listing = function Listing(props) {
       lineNumber: 30,
       columnNumber: 13
     }
-  }, props.therapist.name, " ", props.therapist.surname), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, props.therapist.first_name, " ", props.therapist.last_name), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "h4",
     className: classes.subtitle,
     color: "textSecondary",
@@ -116,7 +119,7 @@ var Listing = function Listing(props) {
       lineNumber: 33,
       columnNumber: 13
     }
-  }, props.therapist.title)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, props.therapist.title)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
     pl: 1,
     __self: _this,
     __source: {
@@ -124,7 +127,7 @@ var Listing = function Listing(props) {
       lineNumber: 38,
       columnNumber: 11
     }
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
     container: true,
     __self: _this,
     __source: {
@@ -132,7 +135,7 @@ var Listing = function Listing(props) {
       lineNumber: 39,
       columnNumber: 13
     }
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
     item: true,
     xs: 5,
     __self: _this,
@@ -141,7 +144,7 @@ var Listing = function Listing(props) {
       lineNumber: 40,
       columnNumber: 15
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "body2",
     style: {
       display: "inline-block"
@@ -153,7 +156,7 @@ var Listing = function Listing(props) {
       lineNumber: 41,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_10__["default"], {
     style: {
       fontSize: 14,
       verticalAlign: "middle"
@@ -164,7 +167,7 @@ var Listing = function Listing(props) {
       lineNumber: 42,
       columnNumber: 19
     }
-  }, "school"), " ", props.therapist.credentials)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "school"), " ", props.therapist.licenses.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
     item: true,
     xs: 7,
     __self: _this,
@@ -173,7 +176,7 @@ var Listing = function Listing(props) {
       lineNumber: 45,
       columnNumber: 15
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "body2",
     style: {
       display: "inline-block"
@@ -185,7 +188,7 @@ var Listing = function Listing(props) {
       lineNumber: 46,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_10__["default"], {
     style: {
       fontSize: 14,
       verticalAlign: "middle"
@@ -196,7 +199,7 @@ var Listing = function Listing(props) {
       lineNumber: 47,
       columnNumber: 19
     }
-  }, "group"), " ", props.therapist.clients)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "group"), " ", props.therapist.client_types.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
     item: true,
     xs: 5,
     __self: _this,
@@ -205,7 +208,7 @@ var Listing = function Listing(props) {
       lineNumber: 50,
       columnNumber: 15
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "body2",
     style: {
       display: "inline-block"
@@ -228,7 +231,7 @@ var Listing = function Listing(props) {
       lineNumber: 52,
       columnNumber: 19
     }
-  }, "$"), " ", props.therapist.payment)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "$"), " ", props.therapist.price, " per Session")), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
     item: true,
     xs: 7,
     __self: _this,
@@ -237,7 +240,7 @@ var Listing = function Listing(props) {
       lineNumber: 55,
       columnNumber: 15
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "body2",
     style: {
       display: "inline-block"
@@ -249,7 +252,7 @@ var Listing = function Listing(props) {
       lineNumber: 56,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_10__["default"], {
     style: {
       fontSize: 14,
       verticalAlign: "middle"
@@ -260,7 +263,7 @@ var Listing = function Listing(props) {
       lineNumber: 57,
       columnNumber: 19
     }
-  }, "work"), " ", props.therapist.experience, " years experience")))))), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, "work"), " ", props.therapist.experience, " years experience")))))), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -270,39 +273,41 @@ var Listing = function Listing(props) {
   }));
 };
 
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
-  root: {
-    overflow: 'hidden'
-  },
-  selected: {
-    background: 'red'
-  },
-  subtitle: {
-    margin: 0
-  },
-  imageContainer: {
-    width: 125,
-    height: 125,
-    padding: 18,
-    display: 'inline-box',
-    verticalAlign: 'top'
-  },
-  contentContainer: {
-    width: 375,
-    height: 120,
-    display: 'inline-box',
-    verticalAlign: 'top',
-    overflow: 'hidden'
-  },
-  listingImage: {
-    width: '100%',
-    borderRadius: '50%'
-  },
-  chip: {
-    position: 'absolute',
-    top: 15,
-    right: 15
-  }
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(function (theme) {
+  var _imageContainer;
+
+  return {
+    root: {
+      overflow: 'hidden'
+    },
+    selected: {
+      background: 'red'
+    },
+    subtitle: {
+      margin: 0
+    },
+    imageContainer: (_imageContainer = {}, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_imageContainer, theme.breakpoints.only('xs'), {
+      width: 110,
+      height: 110,
+      padding: 10
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_imageContainer, "width", 125), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_imageContainer, "height", 125), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_imageContainer, "padding", 18), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_imageContainer, "display", 'inline-box'), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_imageContainer, "verticalAlign", 'top'), _imageContainer),
+    contentContainer: {
+      width: 375,
+      height: 120,
+      display: 'inline-box',
+      verticalAlign: 'top',
+      overflow: 'hidden'
+    },
+    listingImage: {
+      width: '100%',
+      borderRadius: '50%'
+    },
+    chip: {
+      position: 'absolute',
+      top: 15,
+      right: 15
+    }
+  };
 });
 /* harmony default export */ __webpack_exports__["default"] = (Listing);
 
@@ -622,7 +627,7 @@ var Midbar = function Midbar(props) {
       lineNumber: 65,
       columnNumber: 13
     }
-  }, props.therapist.name, " ", props.therapist.surname)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, props.therapist.first_name, " ", props.therapist.last_name)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
     color: "textSecondary",
     pt: 1,
     __self: _this,
@@ -751,7 +756,7 @@ var Midbar = function Midbar(props) {
       lineNumber: 95,
       columnNumber: 11
     }
-  }, props.therapist.specialties)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, props.therapist.specialties.join(', '))), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
     py: 1.5,
     __self: _this,
     __source: {
@@ -784,7 +789,7 @@ var Midbar = function Midbar(props) {
       lineNumber: 104,
       columnNumber: 11
     }
-  }, props.therapist.approaches)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, props.therapist.treatments.join(', '))), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
     py: 1.5,
     __self: _this,
     __source: {
@@ -817,7 +822,7 @@ var Midbar = function Midbar(props) {
       lineNumber: 113,
       columnNumber: 11
     }
-  }, "$", props.therapist.payment)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "$", props.therapist.price, " per Session")), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
     py: 1.5,
     __self: _this,
     __source: {
@@ -850,7 +855,7 @@ var Midbar = function Midbar(props) {
       lineNumber: 122,
       columnNumber: 11
     }
-  }, props.therapist.clients)), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, props.therapist.client_types.join(', '))), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
     "aria-label": "close",
     className: classes.closeButton,
     onClick: function onClick() {
@@ -982,11 +987,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getTherapists; });
 /* harmony import */ var _database_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./database.json */ "./database.json");
 var _database_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./database.json */ "./database.json", 1);
- // import fetch from 'isomorphic-unfetch';
 
 function getTherapists() {
   return _database_json__WEBPACK_IMPORTED_MODULE_0__.therapists;
-}
+} // Home.getInitialProps = function() {
+//   let therapists = getTherapists()
+//
+//   return {
+//     therapists: therapists
+//   }
+// }
 
 /***/ }),
 
@@ -16913,6 +16923,18 @@ var index = create();
 
 /***/ }),
 
+/***/ "./node_modules/next/dist/build/polyfills/fetch/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/next/dist/build/polyfills/fetch/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* globals self */var fetch=self.fetch.bind(self);module.exports=fetch;module.exports.default=module.exports;
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
   !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_2adc2403d89adc16ead0 ***!
@@ -21045,6 +21067,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Box */ "./node_modules/@material-ui/core/esm/Box/index.js");
 /* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Map */ "./components/Map.js");
 /* harmony import */ var _components_Midbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Midbar */ "./components/Midbar.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
 
 
 var _this = undefined,
@@ -21052,6 +21076,7 @@ var _this = undefined,
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -21103,21 +21128,21 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, "Charlotte Therapists"), __jsx("link", {
@@ -21126,7 +21151,7 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -21135,7 +21160,7 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -21144,14 +21169,14 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 9
     }
   }), "// TO-DO move font loading to server side using custom _document.js"), __jsx(_components_NavBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 7
     }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -21159,7 +21184,7 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, __jsx(_components_Listings__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -21171,7 +21196,7 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 9
     }
   }), __jsx(_components_Midbar__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -21181,7 +21206,7 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 58,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -21195,7 +21220,7 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx(_components_Map__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -21204,24 +21229,34 @@ var Home = function Home(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 73
     }
   }))));
 };
 
 Home.getInitialProps = function _callee() {
-  var therapists;
+  var res, therapists;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          therapists = Object(_data__WEBPACK_IMPORTED_MODULE_4__["default"])();
+          _context.next = 2;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()('http://charlotte-therapists-api.herokuapp.com/api/v1/therapists'));
+
+        case 2:
+          res = _context.sent;
+          _context.next = 5;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(res.json());
+
+        case 5:
+          therapists = _context.sent;
+          console.log(therapists);
           return _context.abrupt("return", {
             therapists: therapists
           });
 
-        case 2:
+        case 8:
         case "end":
           return _context.stop();
       }

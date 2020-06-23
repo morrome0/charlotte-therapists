@@ -8,6 +8,7 @@ import NavBar from '../components/NavBar'
 import Box from '@material-ui/core/Box'
 import Map from '../components/Map'
 import Midbar from '../components/Midbar'
+import fetch from 'isomorphic-unfetch'
 
 
 const useStyles = makeStyles({
@@ -64,8 +65,9 @@ const Home = props => {
 }
 
 Home.getInitialProps = async function() {
-  let therapists = getTherapists()
-
+  const res = await fetch('http://charlotte-therapists-api.herokuapp.com/api/v1/therapists')
+  const therapists = await res.json()
+  console.log(therapists)
   return {
     therapists: therapists
   }

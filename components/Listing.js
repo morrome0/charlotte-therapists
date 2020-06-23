@@ -28,7 +28,7 @@ const Listing = props => {
         <ListItemText className={classes.contentContainer}>
           <Box py={1} >
             <Typography style={{fontSize:18}}>
-              {props.therapist.name} {props.therapist.surname}
+              {props.therapist.first_name} {props.therapist.last_name}
             </Typography>
             <Typography variant="h4" className={classes.subtitle} color="textSecondary">
               {props.therapist.title}
@@ -39,17 +39,17 @@ const Listing = props => {
             <Grid container>
               <Grid item xs={5}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>school</Icon> {props.therapist.credentials}
+                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>school</Icon> {props.therapist.licenses.join(', ')}
                 </Typography>
               </Grid>
               <Grid item xs={7}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.clients}
+                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.client_types.join(', ')}
                 </Typography>
               </Grid>
               <Grid item xs={5}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <span style={{fontSize: 14, fontWeight: 800}}>$</span> {props.therapist.payment}
+                  <span style={{fontSize: 14, fontWeight: 800}}>$</span> {props.therapist.price} per Session
                 </Typography>
               </Grid>
               <Grid item xs={7}>
@@ -66,7 +66,7 @@ const Listing = props => {
   )
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     overflow: 'hidden',
   },
@@ -77,6 +77,11 @@ const useStyles = makeStyles({
     margin: 0,
   },
   imageContainer: {
+    [theme.breakpoints.only('xs')]: {
+      width: 110,
+      height:110,
+      padding: 10,
+    },
     width: 125,
     height: 125,
     padding:18,
@@ -100,6 +105,6 @@ const useStyles = makeStyles({
     right:15,
   },
 
-});
+}));
 
 export default Listing

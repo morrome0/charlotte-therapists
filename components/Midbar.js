@@ -62,7 +62,7 @@ const Midbar = props => {
           </Box>
 
           <Box fontSize="24px" mt={2}>
-            <Typography variant="h2">{props.therapist.name} {props.therapist.surname}</Typography>
+            <Typography variant="h2">{props.therapist.first_name} {props.therapist.last_name}</Typography>
           </Box>
 
           <Box color="textSecondary" pt={1}>
@@ -93,7 +93,7 @@ const Midbar = props => {
             <Typography color="textSecondary" variant="h5">Specialty Areas</Typography>
           </Box>
           <Typography variant="body1">
-            {props.therapist.specialties}
+            {props.therapist.specialties.join(', ')}
           </Typography>
         </Box>
 
@@ -102,7 +102,7 @@ const Midbar = props => {
             <Typography color="textSecondary" variant="h5">Treatment Approaches</Typography>
           </Box>
           <Typography variant="body1">
-            {props.therapist.approaches}
+            {props.therapist.treatments.join(', ')}
           </Typography>
         </Box>
 
@@ -111,7 +111,7 @@ const Midbar = props => {
             <Typography color="textSecondary" variant="h5">Payment</Typography>
           </Box>
           <Typography variant="body1">
-            ${props.therapist.payment}
+            ${props.therapist.price} per Session
           </Typography>
         </Box>
 
@@ -120,7 +120,7 @@ const Midbar = props => {
             <Typography color="textSecondary" variant="h5">Clients</Typography>
           </Box>
           <Typography variant="body1">
-            {props.therapist.clients}
+            {props.therapist.client_types.join(', ')}
           </Typography>
         </Box>
         <IconButton aria-label="close" className={classes.closeButton} onClick={() => props.setShowMidbar(false)}>

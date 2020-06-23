@@ -207,7 +207,7 @@ const Listing = props => {
       lineNumber: 30,
       columnNumber: 13
     }
-  }, props.therapist.name, " ", props.therapist.surname), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }, props.therapist.first_name, " ", props.therapist.last_name), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
     variant: "h4",
     className: classes.subtitle,
     color: "textSecondary",
@@ -265,7 +265,7 @@ const Listing = props => {
       lineNumber: 42,
       columnNumber: 19
     }
-  }, "school"), " ", props.therapist.credentials)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }, "school"), " ", props.therapist.licenses.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
     item: true,
     xs: 7,
     __self: undefined,
@@ -297,7 +297,7 @@ const Listing = props => {
       lineNumber: 47,
       columnNumber: 19
     }
-  }, "group"), " ", props.therapist.clients)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }, "group"), " ", props.therapist.client_types.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
     item: true,
     xs: 5,
     __self: undefined,
@@ -329,7 +329,7 @@ const Listing = props => {
       lineNumber: 52,
       columnNumber: 19
     }
-  }, "$"), " ", props.therapist.payment)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }, "$"), " ", props.therapist.price, " per Session")), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
     item: true,
     xs: 7,
     __self: undefined,
@@ -371,7 +371,7 @@ const Listing = props => {
   }));
 };
 
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     overflow: 'hidden'
   },
@@ -382,6 +382,11 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     margin: 0
   },
   imageContainer: {
+    [theme.breakpoints.only('xs')]: {
+      width: 110,
+      height: 110,
+      padding: 10
+    },
     width: 125,
     height: 125,
     padding: 18,
@@ -404,7 +409,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     top: 15,
     right: 15
   }
-});
+}));
 /* harmony default export */ __webpack_exports__["default"] = (Listing);
 
 /***/ }),
@@ -730,7 +735,7 @@ const Midbar = props => {
       lineNumber: 65,
       columnNumber: 13
     }
-  }, props.therapist.name, " ", props.therapist.surname)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, props.therapist.first_name, " ", props.therapist.last_name)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
     color: "textSecondary",
     pt: 1,
     __self: undefined,
@@ -859,7 +864,7 @@ const Midbar = props => {
       lineNumber: 95,
       columnNumber: 11
     }
-  }, props.therapist.specialties)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, props.therapist.specialties.join(', '))), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
     py: 1.5,
     __self: undefined,
     __source: {
@@ -892,7 +897,7 @@ const Midbar = props => {
       lineNumber: 104,
       columnNumber: 11
     }
-  }, props.therapist.approaches)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, props.therapist.treatments.join(', '))), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
     py: 1.5,
     __self: undefined,
     __source: {
@@ -925,7 +930,7 @@ const Midbar = props => {
       lineNumber: 113,
       columnNumber: 11
     }
-  }, "$", props.therapist.payment)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, "$", props.therapist.price, " per Session")), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_3___default.a, {
     py: 1.5,
     __self: undefined,
     __source: {
@@ -958,7 +963,7 @@ const Midbar = props => {
       lineNumber: 122,
       columnNumber: 11
     }
-  }, props.therapist.clients)), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, props.therapist.client_types.join(', '))), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7___default.a, {
     "aria-label": "close",
     className: classes.closeButton,
     onClick: () => props.setShowMidbar(false),
@@ -1087,11 +1092,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getTherapists; });
 /* harmony import */ var _database_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./database.json */ "./database.json");
 var _database_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./database.json */ "./database.json", 1);
- // import fetch from 'isomorphic-unfetch';
 
 function getTherapists() {
   return _database_json__WEBPACK_IMPORTED_MODULE_0__.therapists;
-}
+} // Home.getInitialProps = function() {
+//   let therapists = getTherapists()
+//
+//   return {
+//     therapists: therapists
+//   }
+// }
 
 /***/ }),
 
@@ -1129,9 +1139,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Map */ "./components/Map.js");
 /* harmony import */ var _components_Midbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Midbar */ "./components/Midbar.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__);
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1181,21 +1194,21 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, "Charlotte Therapists"), __jsx("link", {
@@ -1204,7 +1217,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -1213,7 +1226,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 9
     }
   }), __jsx("link", {
@@ -1222,14 +1235,14 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 9
     }
   }), "// TO-DO move font loading to server side using custom _document.js"), __jsx(_components_NavBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 7
     }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1237,7 +1250,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, __jsx(_components_Listings__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1249,7 +1262,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 9
     }
   }), __jsx(_components_Midbar__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1259,7 +1272,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 58,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1273,7 +1286,7 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx(_components_Map__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1282,14 +1295,16 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 73
     }
   }))));
 };
 
 Home.getInitialProps = async function () {
-  let therapists = Object(_data__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()('http://charlotte-therapists-api.herokuapp.com/api/v1/therapists');
+  const therapists = await res.json();
+  console.log(therapists);
   return {
     therapists: therapists
   };
@@ -1495,6 +1510,17 @@ module.exports = require("@material-ui/core/styles");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Close");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
