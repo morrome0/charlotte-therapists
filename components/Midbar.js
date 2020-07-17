@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     position: 'relative',
     display: 'inline-block',
-    width: '500px',
+    width: '450px',
     background: '#fff',
     boxShadow: '0 0 14px rgba(0,0,0,0.25), 0 0 6px rgba(0,0,0,0.22)',
     zIndex:10,
@@ -80,7 +80,7 @@ const Midbar = props => {
         </Box>
 
         <Box py={1.5}>
-          <Box pb={1}>
+          <Box pb={.5}>
             <Typography color="textSecondary" variant="h5">About</Typography>
           </Box>
           <Typography variant="body1">
@@ -89,7 +89,7 @@ const Midbar = props => {
         </Box>
 
         <Box py={1.5}>
-          <Box pb={1}>
+          <Box pb={.5}>
             <Typography color="textSecondary" variant="h5">Specialty Areas</Typography>
           </Box>
           <Typography variant="body1">
@@ -98,7 +98,7 @@ const Midbar = props => {
         </Box>
 
         <Box py={1.5}>
-          <Box pb={1}>
+          <Box pb={.5}>
             <Typography color="textSecondary" variant="h5">Treatment Approaches</Typography>
           </Box>
           <Typography variant="body1">
@@ -107,7 +107,7 @@ const Midbar = props => {
         </Box>
 
         <Box py={1.5}>
-          <Box pb={1}>
+          <Box pb={.5}>
             <Typography color="textSecondary" variant="h5">Payment</Typography>
           </Box>
           <Typography variant="body1">
@@ -116,11 +116,11 @@ const Midbar = props => {
         </Box>
 
         <Box py={1.5}>
-          <Box pb={1}>
+          <Box pb={.5}>
             <Typography color="textSecondary" variant="h5">Clients</Typography>
           </Box>
           <Typography variant="body1">
-            {props.therapist.client_types.join(', ')}
+            {props.therapist.clientTypes.join(', ')}
           </Typography>
         </Box>
         <IconButton aria-label="close" className={classes.closeButton} onClick={() => props.setShowMidbar(false)}>

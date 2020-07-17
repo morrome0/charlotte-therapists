@@ -20,7 +20,7 @@ const Listing = props => {
   }
 
   return (
-    <div>
+    <Box my={1}>
       <ListItem className={classes.root} button selected={props.therapist.id == props.selected ? true : false } onClick={handleClick}>
         <div className={classes.imageContainer}>
           <CardMedia image={'/therapist-images/' + props.therapist.image} className={classes.listingImage} />
@@ -44,7 +44,7 @@ const Listing = props => {
               </Grid>
               <Grid item xs={7}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.client_types.join(', ')}
+                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.clientTypes.join(', ')}
                 </Typography>
               </Grid>
               <Grid item xs={5}>
@@ -61,14 +61,16 @@ const Listing = props => {
           </Box>
         </ListItemText>
       </ListItem>
-      <Divider />
-    </div>
+    </Box>
   )
 }
 
 const useStyles = makeStyles(theme => ({
   root: {
     overflow: 'hidden',
+    background: "white",
+    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    borderRadius: 12,
   },
   selected: {
     background:'red',
@@ -82,15 +84,15 @@ const useStyles = makeStyles(theme => ({
       height:110,
       padding: 10,
     },
-    width: 125,
-    height: 125,
+    width: 115,
+    height: 115,
     padding:18,
     display:'inline-box',
     verticalAlign: 'top',
   },
   contentContainer: {
     width: 375,
-    height: 120,
+    height: 110,
     display:'inline-box',
     verticalAlign: 'top',
     overflow:'hidden'

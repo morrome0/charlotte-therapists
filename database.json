@@ -2,20 +2,129 @@
   "therapists": [
     {
       "id": 1,
-      "name": "Susan",
-      "surname": "Morrow",
+      "first_name": "Susan",
+      "last_name": "Morrow",
       "image": "susan-morrow.jpg",
       "location": { "lat": 35.2089029,"lng": -80.8534172},
       "title": "Couples Therapist",
       "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
-      "specialties": "Depression, Anxiety, Stress, Couples Therapy",
-      "approaches": "Emotionally-Focused Therapy, Gottman Method, Cognitive Behavioral Therapy, Family Systems Therapy, ACT",
-      "payment": "185 per session",
-      "clients": "Individuals, Couples, Families",
+      "specialties": ["depression", "anxiety", "marriage"],
+      "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
+      "price": 180,
+      "clientTypes": ["individuals", "families", "couples"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
-      "credentials": "MSW, LCSW",
+      "licenses": ["MSW", "LCSW"],
+      "experience": "30"
+    },
+    {
+      "id": 2,
+      "first_name": "Kellie",
+      "last_name": "Stinson",
+      "image": "kallie-stinson.jpg",
+      "location": { "lat": 35.2219936, "lng": -80.8557504},
+      "title": "Couples Therapist",
+      "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
+      "specialties": ["depression", "anxiety", "stress", "marriage"],
+      "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
+      "price": 180,
+      "clientTypes": ["individuals", "Families"],
+      "email": "morrowsus@gmail.com",
+      "website": "https://susanmorrow.us",
+      "licenses": ["MSW", "LCSW"],
+      "experience": "11"
+    },
+    {
+      "id": 3,
+      "first_name": "Montina",
+      "last_name": "Myers-Galloway",
+      "image": "montina-myers-gallaway.jpg",
+      "location": {"lat": 35.2028807, "lng": -80.8463633},
+      "title": "Couples Therapist",
+      "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
+      "specialties": ["depression", "stress", "marriage"],
+      "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
+      "price": 180,
+      "clientTypes": ["families"],
+      "email": "morrowsus@gmail.com",
+      "website": "https://susanmorrow.us",
+      "licenses": ["MSW", "LCSW"],
+      "experience": "7"
+    },
+    {
+      "id": 4,
+      "first_name": "Susan",
+      "last_name": "Morrow",
+      "image": "susan-morrow.jpg",
+      "location": { "lat": 35.2089029,"lng": -80.8534172},
+      "title": "Couples Therapist",
+      "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
+      "specialties": ["depression", "anxiety", "stress", "marriage"],
+      "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
+      "price": 180,
+      "clientTypes": ["Individuals", "Families"],
+      "email": "morrowsus@gmail.com",
+      "website": "https://susanmorrow.us",
+      "licenses": ["MSW", "LCSW"],
+      "experience": "3"
+    },
+    {
+      "id": 5,
+      "first_name": "Kellie",
+      "last_name": "Stinson",
+      "image": "kallie-stinson.jpg",
+      "location": { "lat": 35.2219936, "lng": -80.8557504},
+      "title": "Couples Therapist",
+      "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
+      "specialties": ["depression", "anxiety", "stress", "marriage"],
+      "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
+      "price": 180,
+      "clientTypes": ["Individuals", "Families"],
+      "email": "morrowsus@gmail.com",
+      "website": "https://susanmorrow.us",
+      "licenses": ["MSW", "LCSW"],
+      "experience": "12"
+    },
+    {
+      "id": 6,
+      "first_name": "Montina",
+      "last_name": "Myers-Galloway",
+      "image": "montina-myers-gallaway.jpg",
+      "location": {"lat": 35.2028807, "lng": -80.8463633},
+      "title": "Couples Therapist",
+      "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
+      "specialties": ["depression", "anxiety", "stress", "marriage"],
+      "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
+      "price": 180,
+      "clientTypes": ["Individuals", "Families"],
+      "email": "morrowsus@gmail.com",
+      "website": "https://susanmorrow.us",
+      "licenses": ["MSW", "LCSW"],
       "experience": "30"
     }
-  ]
+  ],
+  "catalogue": {
+    "specialties": [
+      "depression",
+      "anxiety",
+      "marriage",
+      "stress"
+    ],
+    "treatments": [
+      "emotionally-focused therapy",
+      "gottman method",
+      "cognitive behavioral therapy",
+      "family systems therapy",
+      "ACT"
+    ],
+    "clientTypes": [
+      "individuals",
+      "couples",
+      "families"
+    ],
+    "licenses": [
+      "MSW",
+      "LCSW"
+    ]
+  }
 }

@@ -14261,14 +14261,19 @@ var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["create
   spacing: 8,
   palette: {
     primary: {
-      main: '#556cd6'
+      main: '#55828b',
+      light: '#E0ECF5'
     },
     secondary: {
-      main: '#56A296'
+      main: '#55828b'
+    },
+    warning: {
+      main: '#FFAD0A'
     },
     error: {
-      main: _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_1___default.a.A400
+      main: "#DB3A34"
     },
+    textPrimary: {},
     textSecondary: {
       main: '#000'
     }
@@ -14296,7 +14301,7 @@ var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["create
       textTransform: "none"
     },
     body1: {
-      fontSize: 16,
+      fontSize: 14,
       fontFamily: "PT Serif"
     },
     body2: {

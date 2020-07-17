@@ -1,38 +1,47 @@
-import React from "react"
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import List from '@material-ui/core/List'
+import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
+import Grid from '@material-ui/core/Grid'
+import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography'
+import Filters from '../components/Filters'
 import Listing from "./Listing"
+
 
 const useStyles = makeStyles(theme => ({
   root: {
     [theme.breakpoints.up('sm')]: {
-      width: "500px",
+      width: "600px",
     },
-    width: "100vh",
-    background: "#fff",
-    overflow: 'auto',
+    width: "100%",
+    background: "#F6F9FC",
     display: 'inline-block',
-    padding:0,
-    borderRight: "1px solid #ccc",
-    zIndex:100
+    zIndex:100,
+    boxShadow: '1px 4px 6px -1px rgba(0, 0, 0, 0.1), 1px 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    overflow: 'scroll',
+    position: 'relative',
   },
+  listingsContainer: {
+
+  }
 }));
 
-
-const ListingsContainer = props => {
+const Listings = props => {
   const classes = useStyles()
 
+
+
   return (
-    <Box className={classes.root}>
-      {props.therapists.map(therapist => (
-          <Listing key={therapist.id} id={therapist.id} therapist={therapist} selected= {props.selected} setSelected={props.setSelected} showMidbar={props.showMidbar} setShowMidbar={props.setShowMidbar}/>
-      ))}
-    </Box>
+      <Box className={classes.root}>
+        <Container className={classes.listingsContainer}>
+          {props.therapists.map(therapist => (
+              <Listing key={therapist.id} id={therapist.id} therapist={therapist} selected= {props.selected} setSelected={props.setSelected} showMidbar={props.showMidbar} setShowMidbar={props.setShowMidbar}/>
+          ))}
+        </Container>
+      </Box>
   )
 }
 
 
-
-export default ListingsContainer
+export default Listings
