@@ -26,6 +26,13 @@ const theme = createMuiTheme({
       main: '#000'
     },
   },
+
+  fontFamily: {
+    primary: ["Source Sans Pro", "Sans"],
+    secondary: ["Raleway", "Sans"],
+  },
+
+
   typography: {
     fontFamily: [
       'PT Serif',
@@ -36,14 +43,15 @@ const theme = createMuiTheme({
     },
     h2: {
       fontSize: 28,
-      fontFamily: "PT Serif"
+      fontFamily: "Source Sans Pro",
+      fontWeight:"500"
     },
     h3: {
 
     },
     h4: {
       fontFamily: "Raleway",
-      fontSize: 14,
+      fontSize: 13,
       fontWeight: "500",
     },
     h5: {
@@ -56,12 +64,12 @@ const theme = createMuiTheme({
       textTransform: "none"
     },
     body1: {
-      fontSize: 14,
-      fontFamily: "PT Serif"
+      fontSize: 16,
+      fontFamily: "Source Sans Pro"
     },
     body2: {
-      fontSize: 13,
-      fontFamily: "PT Serif",
+      fontSize: 14,
+      fontFamily: "Source Sans Pro",
     }
   }
 });

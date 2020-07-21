@@ -55,8 +55,8 @@ const Filters = props => {
         <Icon className={`${classes.filterIcon} ${anyActiveFilters(props.activeFilters) && classes.active} `}>filter_list</Icon>
         {anyActiveFilters(props.activeFilters) ? "FILTERS ON" : "FILTERS OFF"}
       </span>
-      <Filter activeFilter={props.activeFilters.clientTypes} options={props.catalogue.clientTypes} showOptions={props.showOptions} visible={(props.visibleOptions === "clientTypes")} filter="clientTypes" onChange={props.onChange} label="Client Type" type="radio"/>
-      <Filter activeFilter={props.activeFilters.specialties} options={props.catalogue.specialties} showOptions={props.showOptions} visible={(props.visibleOptions === "specialties")} filter="specialties" onChange={props.onChange} label="Specialty" type="radio"/>
+      <Filter activeFilter={props.activeFilters.clientTypes} options={props.catalogue.clientTypes} filter="clientTypes" onChange={props.onChange} label="Client Type" type="radio"/>
+      <Filter activeFilter={props.activeFilters.specialties} options={props.catalogue.specialties} filter="specialties" onChange={props.onChange} label="Specialty" type="radio"/>
       { anyActiveFilters(props.activeFilters) && <Button size="small" onClick={props.clearFilters} className={classes.clear}>Clear All Filters <Icon style={{fontSize: 14, marginLeft: 8}}>close</Icon></Button>}
 
     </Box>

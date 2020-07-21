@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Icon from '@material-ui/core/Icon'
 import Grid from '@material-ui/core/Grid'
+import { CapitalizeAndJoinArray } from '../lib/utils'
 
 
 const Listing = props => {
@@ -20,7 +21,7 @@ const Listing = props => {
   }
 
   return (
-    <Box my={1}>
+    <Box my={1.5}>
       <ListItem className={classes.root} button selected={props.therapist.id == props.selected ? true : false } onClick={handleClick}>
         <div className={classes.imageContainer}>
           <CardMedia image={'/therapist-images/' + props.therapist.image} className={classes.listingImage} />

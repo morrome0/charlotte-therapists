@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
 import dummydata from '../database.json'
-import App from '../components/app'
+import App from '../components/App'
 import fetch from 'isomorphic-unfetch'
 
 const Home = props => {
@@ -32,7 +32,6 @@ if (process.env.NODE_ENV === "development") {
   Home.getInitialProps = async (ctx) => {
     const res = await fetch('http://charlotte-therapists-api.herokuapp.com/api/v1/therapists')
     const json = await res.json()
-    console.log(therapists)
     return {
       therapists: json.therapists,
       specialties: json.specialties,

@@ -40,7 +40,7 @@ const Filter = props => {
         className={classes.button}
         onClick={() => setOpen(!open)}
         size="small"
-        color={props.activeFilter ? "primary" : "#000"}
+        color={props.activeFilter ? "primary" : "inherit"}
         variant={props.activeFilter ? "contained" : "text"}
       >
         { props.activeFilter ?

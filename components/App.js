@@ -1,12 +1,14 @@
 import { useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Listings from '../components/Listings'
-import Listing from '../components/Listing'
-import NavBar from '../components/NavBar'
+import Listings from './Listings'
+import Listing from './Listing'
+import NavBar from './NavBar'
 import Box from '@material-ui/core/Box'
-import Map from '../components/Map'
-import Midbar from '../components/Midbar'
+import Map from './Map'
+import Midbar from './Midbar'
 import Filters from './Filters'
+import Modal from './Modal'
+import RequestListing from './RequestListing'
 
 
 const useStyles = makeStyles({
@@ -28,6 +30,7 @@ const useStyles = makeStyles({
 const App = props => {
   const classes = useStyles()
 
+  // LISTING STATE LOGIC
   const [selected, setSelected] = useState(null)
   const [selectedTherapist, setSelectedTherapist] = useState(props.therapists[0])
   const [showMidbar, setShowMidbar] = useState(true)
@@ -40,18 +43,21 @@ const App = props => {
     if (selected) setSelectedTherapist(getSelectedTherapist())
   }, [selected])
 
+  // FILTER STATE LOGIC
   const defaultFilters = {
     clientTypes: "",
     specialties: "",
   }
   const [filters, setFilters] = useState(defaultFilters)
-  const [visibleOptions, setVisibleOptions] = useState("")
-
   const changeFilters = (filter, value) => {
     setFilters({
       ...filters,
       [filter]: value
     })
+  }
+
+  const clearFilters = () => {
+    setFilters(defaultFilters)
   }
 
   const therapists = props.therapists.filter(function (therapist) {
@@ -61,27 +67,27 @@ const App = props => {
     )
   })
 
-  const showOptions = filter => {
-    setVisibleOptions(filter)
+  // REQUEST A LISTING STATE LOGIC
+  const [showModal, setShowModal] = useState(false)
+  const toggleModal = () => {
+    setShowModal(!showModal)
   }
 
-  const hideOptions = filter => {
-    setVisibleOptions("")
-  }
-
-  const clearFilters = () => {
-    setFilters(defaultFilters)
-  }
 
   return (
     <div className={classes.root}>
-      <NavBar />
-      <Filters clearFilters={clearFilters} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue} visibleOptions={visibleOptions} showOptions={showOptions}/>
+      <NavBar toggleModal={toggleModal} />
+      <Filters clearFilters={clearFilters} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue}/>
       <Box className={classes.main}>
         <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
         <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
         <Box display={{xs: 'none', sm:'block'}} style={{flexGrow: '1'}}><Map therapists={props.therapists} selected= {selected}/></Box>
       </Box>
+      {showModal &&
+      <Modal toggleModal={toggleModal}>
+        <RequestListing />
+      </Modal>
+      }
     </div>
   )
 }

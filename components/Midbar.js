@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     display: 'inline-block',
     width: '450px',
     background: '#fff',
-    boxShadow: '0 0 14px rgba(0,0,0,0.25), 0 0 6px rgba(0,0,0,0.22)',
+    borderRight: '1px solid #ddd',
     zIndex:10,
     overflow: 'auto',
   },
