@@ -34,10 +34,7 @@ if (process.env.NODE_ENV === "development") {
     const json = await res.json()
     return {
       therapists: json.therapists,
-      specialties: json.specialties,
-      treatments: json.therapists,
-      clientTypes: json.client_types,
-      licenses: json.licenses,
+      catalogue: json.catalogue,
     }
   }
 }
