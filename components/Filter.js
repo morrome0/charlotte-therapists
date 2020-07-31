@@ -45,7 +45,7 @@ const Filter = props => {
       >
         { props.activeFilter ?
           `${props.label}: ${props.activeFilter}` :
-          `Choose a ${props.label}`
+          `Choose ${props.label}`
         }
         <Icon className={classes.expandIcon}>expand_more</Icon>
       </Button>

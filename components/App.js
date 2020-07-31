@@ -47,6 +47,7 @@ const App = props => {
   const defaultFilters = {
     clientTypes: "",
     specialties: "",
+    insurance: "",
   }
   const [filters, setFilters] = useState(defaultFilters)
   const changeFilters = (filter, value) => {
@@ -63,7 +64,8 @@ const App = props => {
   const therapists = props.therapists.filter(function (therapist) {
     return (
       (filters.clientTypes ? therapist.clientTypes.includes(filters.clientTypes) : therapist) &&
-      (filters.specialties ? therapist.specialties.includes(filters.specialties) : therapist)
+      (filters.specialties ? therapist.specialties.includes(filters.specialties) : therapist) &&
+      (filters.insurance ? therapist.insurance.includes(filters.insurance) : therapist)
     )
   })
 

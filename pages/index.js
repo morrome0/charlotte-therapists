@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "development") {
   }
 } else {
   Home.getInitialProps = async (ctx) => {
-    const res = await fetch('http://charlotte-therapists-api.herokuapp.com/api/v1/therapists')
+    const res = await fetch(process.env.API_BASE_URL + '/therapists')
     const json = await res.json()
     return {
       therapists: json.therapists,
@@ -40,3 +40,4 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export default Home
+// const json = dummydata

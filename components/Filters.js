@@ -57,6 +57,7 @@ const Filters = props => {
       </span>
       <Filter activeFilter={props.activeFilters.clientTypes} options={props.catalogue.clientTypes} filter="clientTypes" onChange={props.onChange} label="Client Type" type="radio"/>
       <Filter activeFilter={props.activeFilters.specialties} options={props.catalogue.specialties} filter="specialties" onChange={props.onChange} label="Specialty" type="radio"/>
+      <Filter activeFilter={props.activeFilters.insurance} options={props.catalogue.insurance} filter="insurance" onChange={props.onChange} label="Insurance" type="radio"/>
       { anyActiveFilters(props.activeFilters) && <Button size="small" onClick={props.clearFilters} className={classes.clear}>Clear All Filters <Icon style={{fontSize: 14, marginLeft: 8}}>close</Icon></Button>}
 
     </Box>

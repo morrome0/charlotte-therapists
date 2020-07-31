@@ -8,14 +8,15 @@
       "location": { "lat": 35.2089029,"lng": -80.8534172},
       "title": "Couples Therapist",
       "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
-      "specialties": ["depression", "anxiety", "marriage"],
+      "specialties": ["Depression", "Anxiety", "Marriage"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
-      "clientTypes": ["individuals", "families", "couples"],
+      "clientTypes": ["Individual", "Family", "Couple"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
-      "experience": "30"
+      "experience": "30",
+      "insurance": []
     },
     {
       "id": 2,
@@ -28,11 +29,12 @@
       "specialties": ["depression", "anxiety", "stress", "marriage"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
-      "clientTypes": ["individuals", "Families"],
+      "clientTypes": ["Individual", "Family"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
-      "experience": "11"
+      "experience": "11",
+      "insurance": ["Aetna", "United Healthcare", "Cigna"]
     },
     {
       "id": 3,
@@ -45,11 +47,12 @@
       "specialties": ["depression", "stress", "marriage"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
-      "clientTypes": ["families"],
+      "clientTypes": ["Family"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
-      "experience": "7"
+      "experience": "7",
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"]
     },
     {
       "id": 4,
@@ -62,11 +65,12 @@
       "specialties": ["depression", "anxiety", "stress", "marriage"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
-      "clientTypes": ["Individuals", "Families"],
+      "clientTypes": ["Individual", "Family"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
-      "experience": "3"
+      "experience": "3",
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"]
     },
     {
       "id": 5,
@@ -79,11 +83,12 @@
       "specialties": ["depression", "anxiety", "stress", "marriage"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
-      "clientTypes": ["Individuals", "Families"],
+      "clientTypes": ["Individual", "Family"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
-      "experience": "12"
+      "experience": "12",
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"]
     },
     {
       "id": 6,
@@ -96,35 +101,44 @@
       "specialties": ["depression", "anxiety", "stress", "marriage"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
-      "clientTypes": ["Individuals", "Families"],
+      "clientTypes": ["Individual", "Family"],
       "email": "morrowsus@gmail.com",
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
-      "experience": "30"
+      "experience": "30",
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield, Optium"]
     }
   ],
   "catalogue": {
     "specialties": [
-      "depression",
-      "anxiety",
-      "marriage",
-      "stress"
+      "Depression",
+      "Anxiety",
+      "Marriage",
+      "Stress"
     ],
     "treatments": [
-      "emotionally-focused therapy",
-      "gottman method",
-      "cognitive behavioral therapy",
-      "family systems therapy",
+      "Emotionally-Focused Therapy",
+      "Gottman Method",
+      "Cognitive Behavioral Therapy",
+      "Family Systems Therapy",
       "ACT"
     ],
     "clientTypes": [
-      "individuals",
-      "couples",
-      "families"
+      "Individual",
+      "Couple",
+      "Family"
     ],
     "licenses": [
       "MSW",
       "LCSW"
+    ],
+    "insurance": [
+      "Aetna",
+      "BlueCross BlueShield",
+      "Cigna",
+      "Humana",
+      "Optium",
+      "United Healthcare"
     ]
   }
 }
