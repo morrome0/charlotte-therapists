@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2216,13 +2216,13 @@ const Home = props => {
       lineNumber: 14,
       columnNumber: 9
     }
-  }), "// TO-DO move font loading to server side using custom _document.js"), __jsx(_components_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), __jsx(_components_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
     therapists: props.therapists,
     catalogue: props.catalogue,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 17,
       columnNumber: 7
     }
   }));
@@ -2238,11 +2238,11 @@ if (true) {
   };
 } else {}
 
-/* harmony default export */ __webpack_exports__["default"] = (Home); // const json = dummydata
+/* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

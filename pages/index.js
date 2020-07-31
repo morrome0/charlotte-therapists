@@ -12,7 +12,6 @@ const Home = props => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        // TO-DO move font loading to server side using custom _document.js
       </Head>
 
       <App therapists={props.therapists} catalogue={props.catalogue}/>
@@ -30,7 +29,7 @@ if (process.env.NODE_ENV === "development") {
   }
 } else {
   Home.getInitialProps = async (ctx) => {
-    const res = await fetch(process.env.API_BASE_URL + '/therapists')
+    const res = await fetch(process.env.API_BASE_URL + '/therapists', { headers: { 'Token': process.env.API_TOKEN}})
     const json = await res.json()
     return {
       therapists: json.therapists,
@@ -40,4 +39,3 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export default Home
-// const json = dummydata
