@@ -12,23 +12,46 @@ const useStyles = makeStyles({
     flexWrap: "wrap"
 
   },
-  input: {
+  form: {
+    marginTop:0,
+  },
+  field: {
     display: "block",
-    padding: "10px 0"
+    padding: "10px 0",
+    fontSize: "18px",
+    fontWeight: "600"
 
+  },
+  input: {
+    minWidth:400,
+    borderRadius:4,
+    background:"#f4f6f8",
+    border:"none",
+    padding:'12px 24px',
+    fontSize:'20px',
+    boxShadow:'inset 0px 0px 2px rgba(0,0,0,.2)',
+    fontFamily:'Source Sans Pro'
   },
   label: {
     display: "block",
+    paddingBottom:8,
   },
   header: {
     display: 'block',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '18px'
   },
   close: {
     position:"absolute",
     top:20,
     right:20,
+  },
+  submit: {
+    width:"100%",
+    paddingY:"",
+    marginTop:20,
+    fontSize:"16px"
   }
 
 })
@@ -37,50 +60,27 @@ const useStyles = makeStyles({
 
 const RequestListing = props => {
   const classes = useStyles()
-  const [state, setState] = useState({
-    name: "",
-    email: ""
-  })
-
-  const handleChange = e => {
-    setState({...state,
-    [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let url = process.env.API_BASE_URL + '/request-listing'
-    let response =  fetch(url, {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json',
-      'Token': process.env.API_TOKEN
-      },
-      body: JSON.stringify(state),
-    })
-  }
 
   return (
     <div className={classes.root}>
       <div className={classes.header}>
-        <h2>Join Charlotte Therapists</h2>
-        <h3>Are you a therapist in the Charlotte area? Submit this form to add your listing to this site. Listings are completely free for a limited time.</h3>
-
+        <h2>It's Free to Join Charlotte Therapists Before 2021</h2>
+        <h3 style={{fontWeight:"500"}}>Are you a therapist in the Charlotte area? Submit this form to request to add your listing to this site.</h3>
       </div>
-      <form  onSubmit={e => handleSubmit(e)}>
 
-        <label className={classes.input}>
+      <form className={classes.form}  onSubmit={e => props.handleSubmit(e)}>
+
+        <label className={classes.field}>
           <span className={classes.label}>Your Name</span>
-          <input name="name" type="text" value={state.name} onChange={e => handleChange(e)}/>
+          <input className={classes.input} name="name" type="text" value={props.formFields.name} onChange={e => props.handleChange(e)}/>
         </label>
 
-        <label className={classes.input}>
+        <label className={classes.field}>
           <span className={classes.label}>Your Email Address</span>
-          <input name="email" type="text" value={state.email} onChange={e => handleChange(e)}/>
+          <input className={classes.input} name="email" type="text" value={props.formFields.email} onChange={e => props.handleChange(e)}/>
         </label>
 
-        <Button color="primary" type="submit" variant="contained">Submit</Button>
+        <Button size="large" className={classes.submit} color="primary" type="submit" variant="contained">Submit</Button>
       </form>
     </div>
   )

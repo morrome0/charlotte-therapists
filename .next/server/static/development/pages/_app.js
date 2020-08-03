@@ -231,6 +231,9 @@ const theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["crea
     error: {
       main: "#DB3A34"
     },
+    success: {
+      main: "#A0CA92"
+    },
     textPrimary: {},
     textSecondary: {
       main: '#000'

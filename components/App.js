@@ -8,7 +8,7 @@ import Map from './Map'
 import Midbar from './Midbar'
 import Filters from './Filters'
 import Modal from './Modal'
-import RequestListing from './RequestListing'
+import ModalContent from './ModalContent'
 
 
 const useStyles = makeStyles({
@@ -69,25 +69,57 @@ const App = props => {
     )
   })
 
+  //MODAL CONTENT LOGIC
+    const [modal, setModal] = useState("")
+
+    const showModal = (content) => {
+      setModal(content)
+    }
+
+    const closeModal = () => {
+      setModal("")
+    }
+
+
   // REQUEST A LISTING STATE LOGIC
-  const [showModal, setShowModal] = useState(false)
-  const toggleModal = () => {
-    setShowModal(!showModal)
+  const [formFields, setFormFields] = useState({
+    name: "",
+    email: ""
+  })
+
+  const changeFormFields = e => {
+    setFormFields({...formFields,
+    [e.target.name]: e.target.value
+    })
   }
 
+  const submitForm = async (e) => {
+    e.preventDefault()
+    setModal("loader")
+    const url = process.env.API_BASE_URL + '/request-listing'
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json',
+      'Token': process.env.API_TOKEN
+      },
+      body: JSON.stringify(formFields),
+    })
+    response.ok ? setModal("success") : setModal("fail")
+  }
 
   return (
     <div className={classes.root}>
-      <NavBar toggleModal={toggleModal} />
+      <NavBar showModal={showModal} />
       <Filters clearFilters={clearFilters} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue}/>
       <Box className={classes.main}>
         <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
         <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
         <Box display={{xs: 'none', sm:'block'}} style={{flexGrow: '1'}}><Map therapists={props.therapists} selected= {selected}/></Box>
       </Box>
-      {showModal &&
-      <Modal toggleModal={toggleModal}>
-        <RequestListing />
+      {modal &&
+      <Modal closeModal={closeModal}>
+        <ModalContent content={modal} formFields={formFields} handleChange={changeFormFields} handleSubmit={submitForm} />
       </Modal>
       }
     </div>

@@ -9,30 +9,33 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _Listings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Listings */ "./components/Listings.js");
-/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Listing */ "./components/Listing.js");
-/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NavBar */ "./components/NavBar.js");
-/* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Box */ "./node_modules/@material-ui/core/esm/Box/index.js");
-/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Map */ "./components/Map.js");
-/* harmony import */ var _Midbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Midbar */ "./components/Midbar.js");
-/* harmony import */ var _Filters__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Filters */ "./components/Filters.js");
-/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Modal */ "./components/Modal.js");
-/* harmony import */ var _RequestListing__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./RequestListing */ "./components/RequestListing.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _Listings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Listings */ "./components/Listings.js");
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Listing */ "./components/Listing.js");
+/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./NavBar */ "./components/NavBar.js");
+/* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Box */ "./node_modules/@material-ui/core/esm/Box/index.js");
+/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Map */ "./components/Map.js");
+/* harmony import */ var _Midbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Midbar */ "./components/Midbar.js");
+/* harmony import */ var _Filters__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Filters */ "./components/Filters.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Modal */ "./components/Modal.js");
+/* harmony import */ var _ModalContent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ModalContent */ "./components/ModalContent.js");
+
 
 
 var _this = undefined,
     _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/App.js";
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 
 
@@ -45,7 +48,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])({
   root: {
     height: '100vh',
     display: 'flex',
@@ -64,15 +67,15 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
 var App = function App(props) {
   var classes = useStyles(); // LISTING STATE LOGIC
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(null),
       selected = _useState[0],
       setSelected = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.therapists[0]),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(props.therapists[0]),
       selectedTherapist = _useState2[0],
       setSelectedTherapist = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
       showMidbar = _useState3[0],
       setShowMidbar = _useState3[1];
 
@@ -82,7 +85,7 @@ var App = function App(props) {
     });
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     if (selected) setSelectedTherapist(getSelectedTherapist());
   }, [selected]); // FILTER STATE LOGIC
 
@@ -92,12 +95,12 @@ var App = function App(props) {
     insurance: ""
   };
 
-  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(defaultFilters),
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(defaultFilters),
       filters = _useState4[0],
       setFilters = _useState4[1];
 
   var changeFilters = function changeFilters(filter, value) {
-    setFilters(_objectSpread({}, filters, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, filter, value)));
+    setFilters(_objectSpread({}, filters, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, filter, value)));
   };
 
   var clearFilters = function clearFilters() {
@@ -106,14 +109,61 @@ var App = function App(props) {
 
   var therapists = props.therapists.filter(function (therapist) {
     return (filters.clientTypes ? therapist.clientTypes.includes(filters.clientTypes) : therapist) && (filters.specialties ? therapist.specialties.includes(filters.specialties) : therapist) && (filters.insurance ? therapist.insurance.includes(filters.insurance) : therapist);
-  }); // REQUEST A LISTING STATE LOGIC
+  }); //MODAL CONTENT LOGIC
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      showModal = _useState5[0],
-      setShowModal = _useState5[1];
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(""),
+      modal = _useState5[0],
+      setModal = _useState5[1];
 
-  var toggleModal = function toggleModal() {
-    setShowModal(!showModal);
+  var showModal = function showModal(content) {
+    setModal(content);
+  };
+
+  var closeModal = function closeModal() {
+    setModal("");
+  }; // REQUEST A LISTING STATE LOGIC
+
+
+  var _useState6 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
+    name: "",
+    email: ""
+  }),
+      formFields = _useState6[0],
+      setFormFields = _useState6[1];
+
+  var changeFormFields = function changeFormFields(e) {
+    setFormFields(_objectSpread({}, formFields, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, e.target.name, e.target.value)));
+  };
+
+  var submitForm = function submitForm(e) {
+    var url, response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function submitForm$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            e.preventDefault();
+            setModal("loader");
+            url = "https://charlotte-therapists-api.herokuapp.com/api/v1" + '/request-listing';
+            _context.next = 5;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Token': "GaDEIslk4hf9302nflango390n5j"
+              },
+              body: JSON.stringify(formFields)
+            }));
+
+          case 5:
+            response = _context.sent;
+            response.ok ? setModal("success") : setModal("fail");
+
+          case 7:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
   };
 
   return __jsx("div", {
@@ -121,18 +171,18 @@ var App = function App(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 112,
       columnNumber: 5
     }
-  }, __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    toggleModal: toggleModal,
+  }, __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    showModal: showModal,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 113,
       columnNumber: 7
     }
-  }), __jsx(_Filters__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_Filters__WEBPACK_IMPORTED_MODULE_10__["default"], {
     clearFilters: clearFilters,
     onChange: changeFilters,
     activeFilters: filters,
@@ -140,18 +190,18 @@ var App = function App(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 114,
       columnNumber: 7
     }
-  }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: classes.main,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 115,
       columnNumber: 7
     }
-  }, __jsx(_Listings__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_Listings__WEBPACK_IMPORTED_MODULE_4__["default"], {
     therapists: therapists,
     selected: selected,
     setSelected: setSelected,
@@ -160,20 +210,20 @@ var App = function App(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 116,
       columnNumber: 9
     }
-  }), __jsx(_Midbar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_Midbar__WEBPACK_IMPORTED_MODULE_9__["default"], {
     therapist: selectedTherapist,
     showMidbar: showMidbar,
     setShowMidbar: setShowMidbar,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 117,
       columnNumber: 9
     }
-  }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
     display: {
       xs: 'none',
       sm: 'block'
@@ -184,31 +234,35 @@ var App = function App(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 118,
       columnNumber: 9
     }
-  }, __jsx(_Map__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx(_Map__WEBPACK_IMPORTED_MODULE_8__["default"], {
     therapists: props.therapists,
     selected: selected,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 118,
       columnNumber: 73
     }
-  }))), showModal && __jsx(_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    toggleModal: toggleModal,
+  }))), modal && __jsx(_Modal__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    closeModal: closeModal,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 121,
       columnNumber: 7
     }
-  }, __jsx(_RequestListing__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, __jsx(_ModalContent__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    content: modal,
+    formFields: formFields,
+    handleChange: changeFormFields,
+    handleSubmit: submitForm,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 122,
       columnNumber: 9
     }
   })));
@@ -901,6 +955,127 @@ var Listings = function Listings(props) {
 
 /***/ }),
 
+/***/ "./components/Loader.js":
+/*!******************************!*\
+  !*** ./components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "./node_modules/@material-ui/core/esm/CircularProgress/index.js");
+/* harmony import */ var _material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/CheckCircleOutline */ "./node_modules/@material-ui/icons/CheckCircleOutline.js");
+/* harmony import */ var _material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/HighlightOff */ "./node_modules/@material-ui/icons/HighlightOff.js");
+/* harmony import */ var _material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4__);
+var _this = undefined,
+    _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Loader.js";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(function (theme) {
+  return {
+    root: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%,-50%)",
+      textAlign: "center"
+    },
+    message: {
+      paddingTop: 20,
+      fontWeight: "600",
+      fontSize: "22px"
+    },
+    success: {
+      color: theme.palette.success.main
+    },
+    failed: {
+      color: theme.palette.error.main
+    }
+  };
+});
+
+var Loader = function Loader(props) {
+  var classes = useStyles();
+  var icon;
+  var message;
+
+  if (props.status == 'loading') {
+    icon = __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      size: props.size,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33,
+        columnNumber: 12
+      }
+    });
+    message = 'Request submitting...';
+  } else if (props.status == 'success') {
+    icon = __jsx(_material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      className: classes.success,
+      style: {
+        fontSize: props.size
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36,
+        columnNumber: 12
+      }
+    });
+    message = 'Your request was submitted!';
+  } else if (props.status == 'failed') {
+    icon = __jsx(_material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      className: classes.failed,
+      style: {
+        fontSize: props.size
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39,
+        columnNumber: 14
+      }
+    });
+    message = 'Your request failed to submit.';
+  } else {
+    icon = '?';
+    message = 'No loading status given to Loader component';
+  }
+
+  return __jsx("div", {
+    className: classes.root,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 5
+    }
+  }, icon, __jsx("p", {
+    className: classes.message,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 7
+    }
+  }, message));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
+
+/***/ }),
+
 /***/ "./components/Map.js":
 /*!***************************!*\
   !*** ./components/Map.js ***!
@@ -1423,12 +1598,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
-  modal: {
+  shade: {
     position: "absolute",
     height: '100%',
     width: '100%',
+    zIndex: '1999',
+    background: "rgba(0,0,0,.6)"
+  },
+  modal: {
+    position: "absolute",
+    height: '85%',
+    width: '85%',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     background: "white",
-    zIndex: '2000'
+    zIndex: '2000',
+    borderRadius: 12,
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap"
   },
   close: {
     position: "absolute",
@@ -1440,34 +1629,130 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["ma
 var Modal = function Modal(props) {
   var classes = useStyles();
   return __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: classes.shade,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 5
+    }
+  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.modal,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 5
+      lineNumber: 41,
+      columnNumber: 7
     }
   }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
     "aria-label": "close",
     className: classes.close,
-    onClick: props.toggleModal,
+    onClick: props.closeModal,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 7
+      lineNumber: 42,
+      columnNumber: 9
     }
   }, __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 9
+      lineNumber: 43,
+      columnNumber: 11
     }
-  })), props.children);
+  })), props.children));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
+/***/ "./components/ModalContent.js":
+/*!************************************!*\
+  !*** ./components/ModalContent.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _RequestListing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RequestListing */ "./components/RequestListing.js");
+/* harmony import */ var _Loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Loader */ "./components/Loader.js");
+var _this = undefined,
+    _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/ModalContent.js";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var ModalContent = function ModalContent(props) {
+  switch (props.content) {
+    case "listingRequest":
+      return __jsx(_RequestListing__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        formFields: props.formFields,
+        handleChange: props.handleChange,
+        handleSubmit: props.handleSubmit,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8,
+          columnNumber: 14
+        }
+      });
+
+    case "loader":
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        status: "loading",
+        size: 80,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10,
+          columnNumber: 14
+        }
+      });
+
+    case "success":
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        status: "success",
+        size: 80,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12,
+          columnNumber: 14
+        }
+      });
+
+    case "fail":
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        status: "failed",
+        size: 80,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14,
+          columnNumber: 14
+        }
+      });
+
+    default:
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 14
+        }
+      });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ModalContent);
 
 /***/ }),
 
@@ -1573,7 +1858,9 @@ var NavBar = function NavBar(props) {
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    onClick: props.toggleModal,
+    onClick: function onClick() {
+      return props.showModal("listingRequest");
+    },
     color: "secondary",
     __self: _this,
     __source: {
@@ -1674,84 +1961,74 @@ var Option = function Option(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__);
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4__);
 var _this = undefined,
     _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/RequestListing.js";
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
-
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
   root: {
     display: "flex",
     justifyContent: "center",
     padding: 80,
     flexWrap: "wrap"
   },
-  input: {
+  form: {
+    marginTop: 0
+  },
+  field: {
     display: "block",
-    padding: "10px 0"
+    padding: "10px 0",
+    fontSize: "18px",
+    fontWeight: "600"
+  },
+  input: {
+    minWidth: 400,
+    borderRadius: 4,
+    background: "#f4f6f8",
+    border: "none",
+    padding: '12px 24px',
+    fontSize: '20px',
+    boxShadow: 'inset 0px 0px 2px rgba(0,0,0,.2)',
+    fontFamily: 'Source Sans Pro'
   },
   label: {
-    display: "block"
+    display: "block",
+    paddingBottom: 8
   },
   header: {
     display: 'block',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '18px'
   },
   close: {
     position: "absolute",
     top: 20,
     right: 20
+  },
+  submit: {
+    width: "100%",
+    paddingY: "",
+    marginTop: 20,
+    fontSize: "16px"
   }
 });
 
 var RequestListing = function RequestListing(props) {
   var classes = useStyles();
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    name: "",
-    email: ""
-  }),
-      state = _useState[0],
-      setState = _useState[1];
-
-  var handleChange = function handleChange(e) {
-    setState(_objectSpread({}, state, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e.target.name, e.target.value)));
-  };
-
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
-    var url = "https://charlotte-therapists-api.herokuapp.com/api/v1" + '/request-listing';
-    var response = fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Token': "GaDEIslk4hf9302nflango390n5j"
-      },
-      body: JSON.stringify(state)
-    });
-  };
-
   return __jsx("div", {
     className: classes.root,
     __self: _this,
@@ -1775,16 +2052,20 @@ var RequestListing = function RequestListing(props) {
       lineNumber: 67,
       columnNumber: 9
     }
-  }, "Join Charlotte Therapists"), __jsx("h3", {
+  }, "It's Free to Join Charlotte Therapists Before 2021"), __jsx("h3", {
+    style: {
+      fontWeight: "500"
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 68,
       columnNumber: 9
     }
-  }, "Are you a therapist in the Charlotte area? Submit this form to add your listing to this site. Listings are completely free for a limited time.")), __jsx("form", {
+  }, "Are you a therapist in the Charlotte area? Submit this form to request to add your listing to this site.")), __jsx("form", {
+    className: classes.form,
     onSubmit: function onSubmit(e) {
-      return handleSubmit(e);
+      return props.handleSubmit(e);
     },
     __self: _this,
     __source: {
@@ -1793,7 +2074,7 @@ var RequestListing = function RequestListing(props) {
       columnNumber: 7
     }
   }, __jsx("label", {
-    className: classes.input,
+    className: classes.field,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -1809,11 +2090,12 @@ var RequestListing = function RequestListing(props) {
       columnNumber: 11
     }
   }, "Your Name"), __jsx("input", {
+    className: classes.input,
     name: "name",
     type: "text",
-    value: state.name,
+    value: props.formFields.name,
     onChange: function onChange(e) {
-      return handleChange(e);
+      return props.handleChange(e);
     },
     __self: _this,
     __source: {
@@ -1822,7 +2104,7 @@ var RequestListing = function RequestListing(props) {
       columnNumber: 11
     }
   })), __jsx("label", {
-    className: classes.input,
+    className: classes.field,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -1838,11 +2120,12 @@ var RequestListing = function RequestListing(props) {
       columnNumber: 11
     }
   }, "Your Email Address"), __jsx("input", {
+    className: classes.input,
     name: "email",
     type: "text",
-    value: state.email,
+    value: props.formFields.email,
     onChange: function onChange(e) {
-      return handleChange(e);
+      return props.handleChange(e);
     },
     __self: _this,
     __source: {
@@ -1850,7 +2133,9 @@ var RequestListing = function RequestListing(props) {
       lineNumber: 80,
       columnNumber: 11
     }
-  })), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: "large",
+    className: classes.submit,
     color: "primary",
     type: "submit",
     variant: "contained",
@@ -39870,6 +40155,35 @@ var withWidth = function withWidth() {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/CheckCircleOutline.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/icons/CheckCircleOutline.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+}), 'CheckCircleOutline');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/Close.js":
 /*!**************************************************!*\
   !*** ./node_modules/@material-ui/icons/Close.js ***!
@@ -39894,6 +40208,35 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
   d: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
 }), 'Close');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/HighlightOff.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/HighlightOff.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+}), 'HighlightOff');
 
 exports.default = _default;
 
@@ -54341,7 +54684,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fmiller%2FCode%2Fcharlotte-therapists%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -54364,5 +54707,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

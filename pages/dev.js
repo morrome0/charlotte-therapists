@@ -1,11 +1,21 @@
 import { spacing, palette } from '@material-ui/system'
 import Box from '@material-ui/core/Box'
 
-const Dev = props => (
-  <Box>
-    <Box height={"50px"} bgcolor="grey.100"/>
-    <Box height={"calc(100vh-50px)"} bgcolor="grey.300"/>
-  </Box>
-)
+const Dev = props => {
+
+  async function hello() {
+    console.log("hello")
+  }
+
+  function sayHelloThenBye() {
+    hello().then(console.log("bye"))
+  }
+
+  return (
+    <Box>
+      <button onClick={sayHelloThenBye}>Say Hello</button>
+    </Box>
+  )
+}
 
 export default Dev

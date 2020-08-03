@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,7 +115,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Midbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Midbar */ "./components/Midbar.js");
 /* harmony import */ var _Filters__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Filters */ "./components/Filters.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Modal */ "./components/Modal.js");
-/* harmony import */ var _RequestListing__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./RequestListing */ "./components/RequestListing.js");
+/* harmony import */ var _ModalContent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ModalContent */ "./components/ModalContent.js");
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/App.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -199,15 +199,49 @@ const App = props => {
 
   const therapists = props.therapists.filter(function (therapist) {
     return (filters.clientTypes ? therapist.clientTypes.includes(filters.clientTypes) : therapist) && (filters.specialties ? therapist.specialties.includes(filters.specialties) : therapist) && (filters.insurance ? therapist.insurance.includes(filters.insurance) : therapist);
-  }); // REQUEST A LISTING STATE LOGIC
+  }); //MODAL CONTENT LOGIC
 
   const {
-    0: showModal,
-    1: setShowModal
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+    0: modal,
+    1: setModal
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const showModal = content => {
+    setModal(content);
+  };
+
+  const closeModal = () => {
+    setModal("");
+  }; // REQUEST A LISTING STATE LOGIC
+
+
+  const {
+    0: formFields,
+    1: setFormFields
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: "",
+    email: ""
+  });
+
+  const changeFormFields = e => {
+    setFormFields(_objectSpread({}, formFields, {
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const submitForm = async e => {
+    e.preventDefault();
+    setModal("loader");
+    const url = "https://charlotte-therapists-api.herokuapp.com/api/v1" + '/request-listing';
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Token': "GaDEIslk4hf9302nflango390n5j"
+      },
+      body: JSON.stringify(formFields)
+    });
+    response.ok ? setModal("success") : setModal("fail");
   };
 
   return __jsx("div", {
@@ -215,15 +249,15 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 112,
       columnNumber: 5
     }
   }, __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    toggleModal: toggleModal,
+    showModal: showModal,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 113,
       columnNumber: 7
     }
   }), __jsx(_Filters__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -234,7 +268,7 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 114,
       columnNumber: 7
     }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -242,7 +276,7 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 115,
       columnNumber: 7
     }
   }, __jsx(_Listings__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -254,7 +288,7 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 116,
       columnNumber: 9
     }
   }), __jsx(_Midbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -264,7 +298,7 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 117,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -278,7 +312,7 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 118,
       columnNumber: 9
     }
   }, __jsx(_Map__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -287,22 +321,26 @@ const App = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 118,
       columnNumber: 73
     }
-  }))), showModal && __jsx(_Modal__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    toggleModal: toggleModal,
+  }))), modal && __jsx(_Modal__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    closeModal: closeModal,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 121,
       columnNumber: 7
     }
-  }, __jsx(_RequestListing__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, __jsx(_ModalContent__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    content: modal,
+    formFields: formFields,
+    handleChange: changeFormFields,
+    handleSubmit: submitForm,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 122,
       columnNumber: 9
     }
   })));
@@ -1008,6 +1046,125 @@ const Listings = props => {
 
 /***/ }),
 
+/***/ "./components/Loader.js":
+/*!******************************!*\
+  !*** ./components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/CheckCircleOutline */ "@material-ui/icons/CheckCircleOutline");
+/* harmony import */ var _material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/HighlightOff */ "@material-ui/icons/HighlightOff");
+/* harmony import */ var _material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Loader.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  root: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
+    textAlign: "center"
+  },
+  message: {
+    paddingTop: 20,
+    fontWeight: "600",
+    fontSize: "22px"
+  },
+  success: {
+    color: theme.palette.success.main
+  },
+  failed: {
+    color: theme.palette.error.main
+  }
+}));
+
+const Loader = props => {
+  const classes = useStyles();
+  let icon;
+  let message;
+
+  if (props.status == 'loading') {
+    icon = __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      size: props.size,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33,
+        columnNumber: 12
+      }
+    });
+    message = 'Request submitting...';
+  } else if (props.status == 'success') {
+    icon = __jsx(_material_ui_icons_CheckCircleOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      className: classes.success,
+      style: {
+        fontSize: props.size
+      },
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36,
+        columnNumber: 12
+      }
+    });
+    message = 'Your request was submitted!';
+  } else if (props.status == 'failed') {
+    icon = __jsx(_material_ui_icons_HighlightOff__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      className: classes.failed,
+      style: {
+        fontSize: props.size
+      },
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39,
+        columnNumber: 14
+      }
+    });
+    message = 'Your request failed to submit.';
+  } else {
+    icon = '?';
+    message = 'No loading status given to Loader component';
+  }
+
+  return __jsx("div", {
+    className: classes.root,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 5
+    }
+  }, icon, __jsx("p", {
+    className: classes.message,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 7
+    }
+  }, message));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
+
+/***/ }),
+
 /***/ "./components/Map.js":
 /*!***************************!*\
   !*** ./components/Map.js ***!
@@ -1534,12 +1691,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
-  modal: {
+  shade: {
     position: "absolute",
     height: '100%',
     width: '100%',
+    zIndex: '1999',
+    background: "rgba(0,0,0,.6)"
+  },
+  modal: {
+    position: "absolute",
+    height: '85%',
+    width: '85%',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     background: "white",
-    zIndex: '2000'
+    zIndex: '2000',
+    borderRadius: 12,
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap"
   },
   close: {
     position: "absolute",
@@ -1551,34 +1722,128 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
 const Modal = props => {
   const classes = useStyles();
   return __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    className: classes.shade,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 5
+    }
+  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: classes.modal,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 5
+      lineNumber: 41,
+      columnNumber: 7
     }
   }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3___default.a, {
     "aria-label": "close",
     className: classes.close,
-    onClick: props.toggleModal,
+    onClick: props.closeModal,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 7
+      lineNumber: 42,
+      columnNumber: 9
     }
   }, __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 9
+      lineNumber: 43,
+      columnNumber: 11
     }
-  })), props.children);
+  })), props.children));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
+/***/ "./components/ModalContent.js":
+/*!************************************!*\
+  !*** ./components/ModalContent.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _RequestListing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RequestListing */ "./components/RequestListing.js");
+/* harmony import */ var _Loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Loader */ "./components/Loader.js");
+var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/ModalContent.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const ModalContent = props => {
+  switch (props.content) {
+    case "listingRequest":
+      return __jsx(_RequestListing__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        formFields: props.formFields,
+        handleChange: props.handleChange,
+        handleSubmit: props.handleSubmit,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8,
+          columnNumber: 14
+        }
+      });
+
+    case "loader":
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        status: "loading",
+        size: 80,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10,
+          columnNumber: 14
+        }
+      });
+
+    case "success":
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        status: "success",
+        size: 80,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12,
+          columnNumber: 14
+        }
+      });
+
+    case "fail":
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        status: "failed",
+        size: 80,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14,
+          columnNumber: 14
+        }
+      });
+
+    default:
+      return __jsx(_Loader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 14
+        }
+      });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ModalContent);
 
 /***/ }),
 
@@ -1684,7 +1949,7 @@ const NavBar = props => {
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    onClick: props.toggleModal,
+    onClick: () => props.showModal("listingRequest"),
     color: "secondary",
     __self: undefined,
     __source: {
@@ -1797,13 +2062,6 @@ var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/RequestLi
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -1815,54 +2073,50 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     padding: 80,
     flexWrap: "wrap"
   },
-  input: {
+  form: {
+    marginTop: 0
+  },
+  field: {
     display: "block",
-    padding: "10px 0"
+    padding: "10px 0",
+    fontSize: "18px",
+    fontWeight: "600"
+  },
+  input: {
+    minWidth: 400,
+    borderRadius: 4,
+    background: "#f4f6f8",
+    border: "none",
+    padding: '12px 24px',
+    fontSize: '20px',
+    boxShadow: 'inset 0px 0px 2px rgba(0,0,0,.2)',
+    fontFamily: 'Source Sans Pro'
   },
   label: {
-    display: "block"
+    display: "block",
+    paddingBottom: 8
   },
   header: {
     display: 'block',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '18px'
   },
   close: {
     position: "absolute",
     top: 20,
     right: 20
+  },
+  submit: {
+    width: "100%",
+    paddingY: "",
+    marginTop: 20,
+    fontSize: "16px"
   }
 });
 
 const RequestListing = props => {
   const classes = useStyles();
-  const {
-    0: state,
-    1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    name: "",
-    email: ""
-  });
-
-  const handleChange = e => {
-    setState(_objectSpread({}, state, {
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    let url = "https://charlotte-therapists-api.herokuapp.com/api/v1" + '/request-listing';
-    let response = fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Token': "GaDEIslk4hf9302nflango390n5j"
-      },
-      body: JSON.stringify(state)
-    });
-  };
-
   return __jsx("div", {
     className: classes.root,
     __self: undefined,
@@ -1886,15 +2140,19 @@ const RequestListing = props => {
       lineNumber: 67,
       columnNumber: 9
     }
-  }, "Join Charlotte Therapists"), __jsx("h3", {
+  }, "It's Free to Join Charlotte Therapists Before 2021"), __jsx("h3", {
+    style: {
+      fontWeight: "500"
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 68,
       columnNumber: 9
     }
-  }, "Are you a therapist in the Charlotte area? Submit this form to add your listing to this site. Listings are completely free for a limited time.")), __jsx("form", {
-    onSubmit: e => handleSubmit(e),
+  }, "Are you a therapist in the Charlotte area? Submit this form to request to add your listing to this site.")), __jsx("form", {
+    className: classes.form,
+    onSubmit: e => props.handleSubmit(e),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -1902,7 +2160,7 @@ const RequestListing = props => {
       columnNumber: 7
     }
   }, __jsx("label", {
-    className: classes.input,
+    className: classes.field,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -1918,10 +2176,11 @@ const RequestListing = props => {
       columnNumber: 11
     }
   }, "Your Name"), __jsx("input", {
+    className: classes.input,
     name: "name",
     type: "text",
-    value: state.name,
-    onChange: e => handleChange(e),
+    value: props.formFields.name,
+    onChange: e => props.handleChange(e),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -1929,7 +2188,7 @@ const RequestListing = props => {
       columnNumber: 11
     }
   })), __jsx("label", {
-    className: classes.input,
+    className: classes.field,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -1945,10 +2204,11 @@ const RequestListing = props => {
       columnNumber: 11
     }
   }, "Your Email Address"), __jsx("input", {
+    className: classes.input,
     name: "email",
     type: "text",
-    value: state.email,
-    onChange: e => handleChange(e),
+    value: props.formFields.email,
+    onChange: e => props.handleChange(e),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -1956,6 +2216,8 @@ const RequestListing = props => {
       columnNumber: 11
     }
   })), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    size: "large",
+    className: classes.submit,
     color: "primary",
     type: "submit",
     variant: "contained",
@@ -2242,7 +2504,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2317,6 +2579,17 @@ module.exports = require("@material-ui/core/CardMedia");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Chip");
+
+/***/ }),
+
+/***/ "@material-ui/core/CircularProgress":
+/*!*****************************************************!*\
+  !*** external "@material-ui/core/CircularProgress" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/CircularProgress");
 
 /***/ }),
 
@@ -2430,6 +2703,17 @@ module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
+/***/ "@material-ui/icons/CheckCircleOutline":
+/*!********************************************************!*\
+  !*** external "@material-ui/icons/CheckCircleOutline" ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/CheckCircleOutline");
+
+/***/ }),
+
 /***/ "@material-ui/icons/Close":
 /*!*******************************************!*\
   !*** external "@material-ui/icons/Close" ***!
@@ -2438,6 +2722,17 @@ module.exports = require("@material-ui/core/styles");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Close");
+
+/***/ }),
+
+/***/ "@material-ui/icons/HighlightOff":
+/*!**************************************************!*\
+  !*** external "@material-ui/icons/HighlightOff" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/HighlightOff");
 
 /***/ }),
 

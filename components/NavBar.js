@@ -38,7 +38,7 @@ const NavBar = props => {
   return (
     <Box className={classes.root} px={4} pt={1} style={{height:"80px", position:"relative", zIndex:1000}}>
         <Icon className={classes.logoIcon}>weekend</Icon><h1 className={classes.logo}>Charlotte Therapists</h1>
-        <Box display={{xs: 'none', sm: 'block'}} style={{position:"absolute",top:23,right:20}}><Button onClick={props.toggleModal} color="secondary">I'm a Charlotte Therapist</Button></Box>
+        <Box display={{xs: 'none', sm: 'block'}} style={{position:"absolute",top:23,right:20}}><Button onClick={() => props.showModal("listingRequest")} color="secondary">I'm a Charlotte Therapist</Button></Box>
     </Box>
   )
 }
