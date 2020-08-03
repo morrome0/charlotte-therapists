@@ -12,11 +12,8 @@ export default class MyDocument extends Document {
 
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link
-            rel="preload"
-            href="/fonts/source-sans-pro-v13-latin-regular.woff2"
-            as="style"
-          />
+          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
         </Head>
         <body>
           <Main />

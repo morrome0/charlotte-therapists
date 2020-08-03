@@ -1117,6 +1117,8 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       rel: "preload",
       href: "/fonts/source-sans-pro-v13-latin-regular.woff2",
       as: "style",
+      type: "font/woff2",
+      crossOrigin: true,
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -1127,21 +1129,21 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 23,
         columnNumber: 9
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 24,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 25,
         columnNumber: 11
       }
     })));
@@ -1180,7 +1182,7 @@ MyDocument.getInitialProps = async ctx => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 61,
         columnNumber: 54
       }
     })))
