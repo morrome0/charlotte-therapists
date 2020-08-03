@@ -75,7 +75,7 @@ var App = function App(props) {
       selectedTherapist = _useState2[0],
       setSelectedTherapist = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
       showMidbar = _useState3[0],
       setShowMidbar = _useState3[1];
 
@@ -54628,31 +54628,13 @@ var Home = function Home(props) {
       lineNumber: 12,
       columnNumber: 9
     }
-  }), __jsx("link", {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 9
-    }
-  }), __jsx("link", {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 9
-    }
   })), __jsx(_components_App__WEBPACK_IMPORTED_MODULE_5__["default"], {
     therapists: props.therapists,
     catalogue: props.catalogue,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 15,
       columnNumber: 7
     }
   }));

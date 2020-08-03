@@ -1114,33 +1114,54 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
+      rel: "preload",
+      href: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap",
+      as: "style",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15,
         columnNumber: 11
       }
-    })), __jsx("body", {
+    }), __jsx("link", {
+      ref: "preload",
+      href: "https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap",
+      as: "style",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20,
+        columnNumber: 11
+      }
+    }), __jsx("link", {
+      rel: "preload",
+      href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+      as: "style",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25,
+        columnNumber: 11
+      }
+    })), __jsx("body", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
         columnNumber: 9
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 32,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 33,
         columnNumber: 11
       }
     })));
@@ -1179,7 +1200,7 @@ MyDocument.getInitialProps = async ctx => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 69,
         columnNumber: 54
       }
     })))

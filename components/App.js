@@ -33,7 +33,7 @@ const App = props => {
   // LISTING STATE LOGIC
   const [selected, setSelected] = useState(null)
   const [selectedTherapist, setSelectedTherapist] = useState(props.therapists[0])
-  const [showMidbar, setShowMidbar] = useState(true)
+  const [showMidbar, setShowMidbar] = useState(false)
 
   const getSelectedTherapist = () => {
     return props.therapists.find((therapist) => therapist.id == selected)

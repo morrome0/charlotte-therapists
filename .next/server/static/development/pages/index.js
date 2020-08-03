@@ -167,7 +167,7 @@ const App = props => {
   const {
     0: showMidbar,
     1: setShowMidbar
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
   const getSelectedTherapist = () => {
     return props.therapists.find(therapist => therapist.id == selected);
@@ -2460,31 +2460,13 @@ const Home = props => {
       lineNumber: 12,
       columnNumber: 9
     }
-  }), __jsx("link", {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 9
-    }
-  }), __jsx("link", {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 9
-    }
   })), __jsx(_components_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
     therapists: props.therapists,
     catalogue: props.catalogue,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 15,
       columnNumber: 7
     }
   }));
