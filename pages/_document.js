@@ -23,9 +23,8 @@ export default class MyDocument extends Document {
             as="style"
           />
           <link
-            rel="preload"
+            rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            as="style"
           />
         </Head>
         <body>
