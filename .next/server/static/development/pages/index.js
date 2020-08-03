@@ -370,8 +370,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Icon */ "@material-ui/core/Icon");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/ExpandMore */ "@material-ui/icons/ExpandMore");
+/* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Filter.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -418,7 +418,7 @@ const Filter = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -430,18 +430,18 @@ const Filter = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 7
     }
-  }, props.activeFilter ? `${props.label}: ${props.activeFilter}` : `Choose ${props.label}`, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, props.activeFilter ? `${props.label}: ${props.activeFilter}` : `Choose ${props.label}`, __jsx(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_6___default.a, {
     className: classes.expandIcon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 9
     }
-  }, "expand_more")), open && __jsx(_SelectOptions__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), open && __jsx(_SelectOptions__WEBPACK_IMPORTED_MODULE_3__["default"], {
     handleClose: handleClose,
     selected: props.activeFilter,
     options: props.options,
@@ -451,7 +451,7 @@ const Filter = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 7
     }
   }));
@@ -483,10 +483,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _SelectOptions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SelectOptions */ "./components/SelectOptions.js");
 /* harmony import */ var _Filter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Filter */ "./components/Filter.js");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Icon */ "@material-ui/core/Icon");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/FilterList */ "@material-ui/icons/FilterList");
+/* harmony import */ var _material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/Close */ "@material-ui/icons/Close");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_10__);
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Filters.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -500,8 +502,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
+    [theme.breakpoints.only('xs')]: {},
     background: '#fff',
     padding: "0 15px 15px 180px",
     borderBottom: "1px solid #ddd",
@@ -544,7 +548,7 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 57,
       columnNumber: 5
     }
   }, __jsx("span", {
@@ -557,18 +561,18 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 58,
       columnNumber: 7
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8___default.a, {
+  }, __jsx(_material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_8___default.a, {
     className: `${classes.filterIcon} ${anyActiveFilters(props.activeFilters) && classes.active} `,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 59,
       columnNumber: 9
     }
-  }, "filter_list"), anyActiveFilters(props.activeFilters) ? "FILTERS ON" : "FILTERS OFF"), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), anyActiveFilters(props.activeFilters) ? "FILTERS ON" : "FILTERS OFF"), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_7__["default"], {
     activeFilter: props.activeFilters.clientTypes,
     options: props.catalogue.clientTypes,
     filter: "clientTypes",
@@ -578,7 +582,7 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 62,
       columnNumber: 7
     }
   }), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -591,7 +595,7 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 63,
       columnNumber: 7
     }
   }), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -604,7 +608,7 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 64,
       columnNumber: 7
     }
   }), anyActiveFilters(props.activeFilters) && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -614,10 +618,10 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 65,
       columnNumber: 50
     }
-  }, "Clear All Filters ", __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8___default.a, {
+  }, "Clear All Filters ", __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_10___default.a, {
     style: {
       fontSize: 14,
       marginLeft: 8
@@ -625,10 +629,10 @@ const Filters = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 65,
       columnNumber: 144
     }
-  }, "close")));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Filters);
@@ -662,13 +666,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Divider */ "@material-ui/core/Divider");
 /* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Icon */ "@material-ui/core/Icon");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../lib/utils */ "./lib/utils.js");
+/* harmony import */ var _material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/School */ "@material-ui/icons/School");
+/* harmony import */ var _material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/Work */ "@material-ui/icons/Work");
+/* harmony import */ var _material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Group */ "@material-ui/icons/Group");
+/* harmony import */ var _material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/AttachMoney */ "@material-ui/icons/AttachMoney");
+/* harmony import */ var _material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13__);
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Listing.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -695,7 +706,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 26,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -706,7 +717,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 27,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -714,7 +725,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 28,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -723,7 +734,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 29,
       columnNumber: 11
     }
   })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -731,7 +742,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -739,7 +750,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 32,
       columnNumber: 11
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -749,7 +760,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 33,
       columnNumber: 13
     }
   }, props.therapist.first_name, " ", props.therapist.last_name), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -759,7 +770,7 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 36,
       columnNumber: 13
     }
   }, props.therapist.title)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -767,56 +778,24 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 41,
       columnNumber: 11
     }
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
     container: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 42,
       columnNumber: 13
     }
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
     item: true,
     xs: 5,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 15
-    }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "body2",
-    style: {
-      display: "inline-block"
-    },
-    color: "textSecondary",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 17
-    }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    style: {
-      fontSize: 14,
-      verticalAlign: "middle"
-    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43,
-      columnNumber: 19
-    }
-  }, "school"), " ", props.therapist.licenses.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    item: true,
-    xs: 7,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
       columnNumber: 15
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -828,10 +807,10 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 44,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9___default.a, {
+  }, __jsx(_material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9___default.a, {
     style: {
       fontSize: 14,
       verticalAlign: "middle"
@@ -839,16 +818,48 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 45,
       columnNumber: 19
     }
-  }, "group"), " ", props.therapist.clientTypes.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }), " ", props.therapist.licenses.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
+    item: true,
+    xs: 7,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 15
+    }
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    variant: "body2",
+    style: {
+      display: "inline-block"
+    },
+    color: "textSecondary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    style: {
+      fontSize: 14,
+      verticalAlign: "middle"
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 19
+    }
+  }), " ", props.therapist.clientTypes.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
     item: true,
     xs: 5,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 53,
       columnNumber: 15
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -860,27 +871,27 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 54,
       columnNumber: 17
     }
-  }, __jsx("span", {
+  }, __jsx(_material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13___default.a, {
     style: {
-      fontSize: 14,
-      fontWeight: 800
+      fontSize: 16,
+      verticalAlign: "middle"
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 55,
       columnNumber: 19
     }
-  }, "$"), " ", props.therapist.price, " per Session")), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }), " ", props.therapist.price, " per Session")), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
     item: true,
     xs: 7,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 58,
       columnNumber: 15
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -892,10 +903,10 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 59,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9___default.a, {
+  }, __jsx(_material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10___default.a, {
     style: {
       fontSize: 14,
       verticalAlign: "middle"
@@ -903,10 +914,10 @@ const Listing = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 60,
       columnNumber: 19
     }
-  }, "work"), " ", props.therapist.experience, " years experience")))))));
+  }), " ", props.therapist.experience, " years experience")))))));
 };
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
@@ -1866,8 +1877,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Icon */ "@material-ui/core/Icon");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Weekend__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Weekend */ "@material-ui/icons/Weekend");
+/* harmony import */ var _material_ui_icons_Weekend__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Weekend__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/NavBar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1916,7 +1927,7 @@ const NavBar = props => {
       lineNumber: 39,
       columnNumber: 5
     }
-  }, __jsx(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }, __jsx(_material_ui_icons_Weekend__WEBPACK_IMPORTED_MODULE_5___default.a, {
     className: classes.logoIcon,
     __self: undefined,
     __source: {
@@ -1924,13 +1935,13 @@ const NavBar = props => {
       lineNumber: 40,
       columnNumber: 9
     }
-  }, "weekend"), __jsx("h1", {
+  }), __jsx("h1", {
     className: classes.logo,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
-      columnNumber: 58
+      columnNumber: 49
     }
   }, "Charlotte Therapists"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_1___default.a, {
     display: {
@@ -2377,29 +2388,6 @@ module.exports = JSON.parse("{\"therapists\":[{\"id\":1,\"first_name\":\"Susan\"
 
 /***/ }),
 
-/***/ "./lib/utils.js":
-/*!**********************!*\
-  !*** ./lib/utils.js ***!
-  \**********************/
-/*! exports provided: Capitalize, CapitalizeAndJoinArray */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Capitalize", function() { return Capitalize; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CapitalizeAndJoinArray", function() { return CapitalizeAndJoinArray; });
-const Capitalize = string => {
-  return string[0].toUpperCase() + string.slice(1);
-};
-const CapitalizeAndJoinArray = array => {
-  let newArray = array.map(string => {
-    return Capitalize(string);
-  });
-  return newArray.join(", ");
-};
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -2685,6 +2673,17 @@ module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
+/***/ "@material-ui/icons/AttachMoney":
+/*!*************************************************!*\
+  !*** external "@material-ui/icons/AttachMoney" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/AttachMoney");
+
+/***/ }),
+
 /***/ "@material-ui/icons/CheckCircleOutline":
 /*!********************************************************!*\
   !*** external "@material-ui/icons/CheckCircleOutline" ***!
@@ -2707,6 +2706,39 @@ module.exports = require("@material-ui/icons/Close");
 
 /***/ }),
 
+/***/ "@material-ui/icons/ExpandMore":
+/*!************************************************!*\
+  !*** external "@material-ui/icons/ExpandMore" ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/ExpandMore");
+
+/***/ }),
+
+/***/ "@material-ui/icons/FilterList":
+/*!************************************************!*\
+  !*** external "@material-ui/icons/FilterList" ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/FilterList");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Group":
+/*!*******************************************!*\
+  !*** external "@material-ui/icons/Group" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Group");
+
+/***/ }),
+
 /***/ "@material-ui/icons/HighlightOff":
 /*!**************************************************!*\
   !*** external "@material-ui/icons/HighlightOff" ***!
@@ -2715,6 +2747,39 @@ module.exports = require("@material-ui/icons/Close");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/HighlightOff");
+
+/***/ }),
+
+/***/ "@material-ui/icons/School":
+/*!********************************************!*\
+  !*** external "@material-ui/icons/School" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/School");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Weekend":
+/*!*********************************************!*\
+  !*** external "@material-ui/icons/Weekend" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Weekend");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Work":
+/*!******************************************!*\
+  !*** external "@material-ui/icons/Work" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Work");
 
 /***/ }),
 

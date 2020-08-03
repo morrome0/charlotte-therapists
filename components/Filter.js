@@ -4,7 +4,8 @@ import IconButton from "@material-ui/core/IconButton"
 import SelectOptions from './SelectOptions'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
-import Icon from '@material-ui/core/Icon'
+import ExpandMore from '@material-ui/icons/ExpandMore'
+
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -47,7 +48,7 @@ const Filter = props => {
           `${props.label}: ${props.activeFilter}` :
           `Choose ${props.label}`
         }
-        <Icon className={classes.expandIcon}>expand_more</Icon>
+        <ExpandMore className={classes.expandIcon} />
       </Button>
 
       {open &&

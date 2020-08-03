@@ -13,16 +13,9 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-          />
-          <link
-            ref="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="preload"
+            href="/fonts/source-sans-pro-v13-latin-regular.woff2"
+            as="style"
           />
         </Head>
         <body>

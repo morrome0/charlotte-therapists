@@ -6,11 +6,15 @@ import SelectMultiple from './SelectMultiple'
 import Button from '@material-ui/core/Button'
 import SelectOptions from './SelectOptions'
 import Filter from './Filter'
-import Icon from '@material-ui/core/Icon'
+import FilterList from '@material-ui/icons/FilterList'
 import IconButton from '@material-ui/core/IconButton'
+import Close from '@material-ui/icons/Close'
 
 const useStyles = makeStyles(theme => ({
   root: {
+    [theme.breakpoints.only('xs')]: {
+
+    },
     background:'#fff',
     padding:"0 15px 15px 180px",
     borderBottom: "1px solid #ddd",
@@ -52,13 +56,13 @@ const Filters = props => {
   return (
     <Box className={classes.root}>
       <span className={`${classes.filterIndicator} ${anyActiveFilters(props.activeFilters) && classes.active} `} style={{fontFamily:"Raleway", fontWeight:"bold",marginRight:20}}>
-        <Icon className={`${classes.filterIcon} ${anyActiveFilters(props.activeFilters) && classes.active} `}>filter_list</Icon>
+        <FilterList className={`${classes.filterIcon} ${anyActiveFilters(props.activeFilters) && classes.active} `} />
         {anyActiveFilters(props.activeFilters) ? "FILTERS ON" : "FILTERS OFF"}
       </span>
       <Filter activeFilter={props.activeFilters.clientTypes} options={props.catalogue.clientTypes} filter="clientTypes" onChange={props.onChange} label="Client Type" type="radio"/>
       <Filter activeFilter={props.activeFilters.specialties} options={props.catalogue.specialties} filter="specialties" onChange={props.onChange} label="Specialty" type="radio"/>
       <Filter activeFilter={props.activeFilters.insurance} options={props.catalogue.insurance} filter="insurance" onChange={props.onChange} label="Insurance" type="radio"/>
-      { anyActiveFilters(props.activeFilters) && <Button size="small" onClick={props.clearFilters} className={classes.clear}>Clear All Filters <Icon style={{fontSize: 14, marginLeft: 8}}>close</Icon></Button>}
+      { anyActiveFilters(props.activeFilters) && <Button size="small" onClick={props.clearFilters} className={classes.clear}>Clear All Filters <Close style={{fontSize: 14, marginLeft: 8}} /></Button>}
 
     </Box>
   )

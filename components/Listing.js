@@ -7,9 +7,11 @@ import Typography from '@material-ui/core/Typography'
 import CardMedia from '@material-ui/core/CardMedia'
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
-import Icon from '@material-ui/core/Icon'
+import School from '@material-ui/icons/School'
+import Work from '@material-ui/icons/Work'
+import Group from '@material-ui/icons/Group'
 import Grid from '@material-ui/core/Grid'
-import { CapitalizeAndJoinArray } from '../lib/utils'
+import AttachMoney from '@material-ui/icons/AttachMoney'
 
 
 const Listing = props => {
@@ -40,22 +42,22 @@ const Listing = props => {
             <Grid container>
               <Grid item xs={5}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>school</Icon> {props.therapist.licenses.join(', ')}
+                  <School style={{fontSize: 14, verticalAlign:"middle"}} /> {props.therapist.licenses.join(', ')}
                 </Typography>
               </Grid>
               <Grid item xs={7}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>group</Icon> {props.therapist.clientTypes.join(', ')}
+                  <Group style={{fontSize: 14, verticalAlign:"middle"}} /> {props.therapist.clientTypes.join(', ')}
                 </Typography>
               </Grid>
               <Grid item xs={5}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <span style={{fontSize: 14, fontWeight: 800}}>$</span> {props.therapist.price} per Session
+                  <AttachMoney style={{fontSize: 16, verticalAlign:"middle"}} /> {props.therapist.price} per Session
                 </Typography>
               </Grid>
               <Grid item xs={7}>
                 <Typography variant="body2" style={{display:"inline-block"}} color="textSecondary">
-                  <Icon style={{fontSize: 14, verticalAlign:"middle"}}>work</Icon> {props.therapist.experience} years experience
+                  <Work style={{fontSize: 14, verticalAlign:"middle"}} /> {props.therapist.experience} years experience
                 </Typography>
               </Grid>
             </Grid>
