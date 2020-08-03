@@ -1114,36 +1114,42 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "preload",
-      href: "/fonts/source-sans-pro-v13-latin-regular.woff2",
-      as: "style",
-      type: "font/woff2",
-      crossOrigin: true,
+      href: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap",
+      rel: "stylesheet",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15,
         columnNumber: 11
       }
+    }), __jsx("link", {
+      href: "https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap",
+      rel: "stylesheet",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16,
+        columnNumber: 11
+      }
     })), __jsx("body", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 18,
         columnNumber: 9
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 19,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 20,
         columnNumber: 11
       }
     })));
@@ -1182,7 +1188,7 @@ MyDocument.getInitialProps = async ctx => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 56,
         columnNumber: 54
       }
     })))
