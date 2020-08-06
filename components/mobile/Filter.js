@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const FilterMobile = props => {
+const Filter = props => {
 const classes = useStyles()
 
   return (
@@ -43,12 +43,4 @@ const classes = useStyles()
   )
 }
 
-export default FilterMobile
-
-// <form onChange={(e) => handleChange(e)} className={classes.selectOptions}>
-//   {props.options.map((option, i) => (
-//     <div className={classes.row}>
-//       <Option key={i} id={i} checked={props.selected === option} value={option} name={props.filter} type={props.type}>{option}</Option>
-//     </div>
-//   ))}
-// </form>
+export default Filter

@@ -2585,7 +2585,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   }
 }));
 
-const FilterMobile = props => {
+const Filter = props => {
   const classes = useStyles();
   return __jsx("div", {
     className: classes.root,
@@ -2637,13 +2637,7 @@ const FilterMobile = props => {
   }, option)))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (FilterMobile); // <form onChange={(e) => handleChange(e)} className={classes.selectOptions}>
-//   {props.options.map((option, i) => (
-//     <div className={classes.row}>
-//       <Option key={i} id={i} checked={props.selected === option} value={option} name={props.filter} type={props.type}>{option}</Option>
-//     </div>
-//   ))}
-// </form>
+/* harmony default export */ __webpack_exports__["default"] = (Filter);
 
 /***/ }),
 
