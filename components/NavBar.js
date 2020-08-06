@@ -8,7 +8,8 @@ import Weekend from '@material-ui/icons/Weekend'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.only('xs')]: {
+    [theme.breakpoints.down('sm')]: {
+      borderBottom: "1px solid #ddd",
 
     },
     textAlign: "center",
@@ -38,7 +39,7 @@ const NavBar = props => {
   return (
     <Box className={classes.root} px={4} pt={1} style={{height:"80px", position:"relative", zIndex:1000}}>
         <Weekend className={classes.logoIcon} /><h1 className={classes.logo}>Charlotte Therapists</h1>
-        <Box display={{xs: 'none', sm: 'block'}} style={{position:"absolute",top:23,right:20}}><Button onClick={() => props.showModal("listingRequest")} color="secondary">I'm a Charlotte Therapist</Button></Box>
+        <Box display={{xs: 'none', md: 'block'}} style={{position:"absolute",top:23,right:20}}><Button onClick={() => props.showModal("listingRequest")} color="secondary">I'm a Charlotte Therapist</Button></Box>
     </Box>
   )
 }

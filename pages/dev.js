@@ -1,21 +1,25 @@
+import { useState, useEffect } from 'react'
 import { spacing, palette } from '@material-ui/system'
 import Box from '@material-ui/core/Box'
 
+
+let eventCount = 0
+
 const Dev = props => {
+  const [mobile, setMobile] = useState(false)
 
-  async function hello() {
-    console.log("hello")
-  }
+  const onWindowResize = throttle(() => setMobile( window.innerWidth < 480 ), 200, { 'leading': true});
 
-  function sayHelloThenBye() {
-    hello().then(console.log("bye"))
-  }
+  useEffect(() => {
+    setMobile(window.innerWidth < 480)
+  }, [])
 
-  return (
-    <Box>
-      <button onClick={sayHelloThenBye}>Say Hello</button>
-    </Box>
-  )
+  useEffect(() => {
+    window.addEventListener('resize', onWindowResize)
+    return () => window.removeEventListener('resize', onWindowResize)
+  })
+
+  return mobile ? <p>I'm Mobile</p> : <p>{ "I'm not mobile" }</p>
 }
 
 export default Dev

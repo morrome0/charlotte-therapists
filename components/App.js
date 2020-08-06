@@ -6,9 +6,12 @@ import NavBar from './NavBar'
 import Box from '@material-ui/core/Box'
 import Map from './Map'
 import Midbar from './Midbar'
-import Filters from './Filters'
+import FiltersBar from './FiltersBar'
 import Modal from './Modal'
 import ModalContent from './ModalContent'
+import { throttle } from 'lodash'
+import BottomBar from './mobile/BottomBar'
+import Subpage from './mobile/Subpage'
 
 
 const useStyles = makeStyles({
@@ -30,7 +33,21 @@ const useStyles = makeStyles({
 const App = props => {
   const classes = useStyles()
 
-  // LISTING STATE LOGIC
+  // MOBILE
+  const [mobile, setMobile] = useState(false)
+
+  useEffect(() => {
+    setMobile(window.innerWidth < 960)
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', onWindowResize)
+    return () => window.removeEventListener('resize', onWindowResize)
+  })
+
+  const onWindowResize = throttle(() => setMobile( window.innerWidth < 960 ), 200, { 'leading': true});
+
+  // LISTINGS
   const [selected, setSelected] = useState(null)
   const [selectedTherapist, setSelectedTherapist] = useState(props.therapists[0])
   const [showMidbar, setShowMidbar] = useState(false)
@@ -43,7 +60,7 @@ const App = props => {
     if (selected) setSelectedTherapist(getSelectedTherapist())
   }, [selected])
 
-  // FILTER STATE LOGIC
+  // FILTERS
   const defaultFilters = {
     clientTypes: "",
     specialties: "",
@@ -69,16 +86,34 @@ const App = props => {
     )
   })
 
-  //MODAL CONTENT LOGIC
-    const [modal, setModal] = useState("")
+  // MOBILE SUBPAGE
+  const [subpage, setSubpage] = useState("")
+  const [previousSubpage, setPreviousSubpage] = useState("")
 
-    const showModal = (content) => {
-      setModal(content)
-    }
+  const showSubpage = (content) => {
+    setPreviousSubpage(subpage)
+    setSubpage(content)
+  }
 
-    const closeModal = () => {
-      setModal("")
-    }
+  const showPreviousSubpage = () => {
+    setPreviousSubpage("")
+    setSubpage(previousSubpage)
+  }
+
+  const closeSubpage = () => {
+    setSubpage("")
+  }
+
+  // MODAL
+  const [modal, setModal] = useState("")
+
+  const showModal = (content) => {
+    setModal(content)
+  }
+
+  const closeModal = () => {
+    setModal("")
+  }
 
 
   // REQUEST A LISTING STATE LOGIC
@@ -108,22 +143,40 @@ const App = props => {
     response.ok ? setModal("success") : setModal("fail")
   }
 
-  return (
-    <div className={classes.root}>
-      <NavBar showModal={showModal} />
-      <Filters clearFilters={clearFilters} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue}/>
-      <Box className={classes.main}>
-        <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
-        <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
-        <Box display={{xs: 'none', sm:'block'}} style={{flexGrow: '1'}}><Map therapists={props.therapists} selected= {selected}/></Box>
-      </Box>
-      {modal &&
-      <Modal closeModal={closeModal}>
-        <ModalContent content={modal} formFields={formFields} handleChange={changeFormFields} handleSubmit={submitForm} />
-      </Modal>
-      }
-    </div>
-  )
+  if (mobile) {
+    return (
+      <div className={classes.root}>
+        <NavBar showModal={showModal} />
+        <Box className={classes.main}>
+          <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+          <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+        </Box>
+        <BottomBar subpage={subpage} show={showSubpage}/>
+        {subpage &&
+        <Subpage back={showPreviousSubpage} show={showSubpage} content={subpage} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue} />
+        }
+      </div>
+    )
+  } else {
+    return (
+      <div className={classes.root}>
+        <NavBar showModal={showModal} />
+        <FiltersBar clearFilters={clearFilters} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue} />
+        <Box className={classes.main}>
+          <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+          <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+          <Box style={{flexGrow: '1'}}><Map therapists={props.therapists} selected= {selected}/></Box>
+        </Box>
+        {modal &&
+        <Modal closeModal={closeModal}>
+          <ModalContent content={modal} formFields={formFields} handleChange={changeFormFields} handleSubmit={submitForm} />
+        </Modal>
+        }
+      </div>
+    )
+  }
+
+
 }
 
 export default App

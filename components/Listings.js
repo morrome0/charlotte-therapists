@@ -5,7 +5,6 @@ import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography'
-import Filters from '../components/Filters'
 import Listing from "./Listing"
 
 
