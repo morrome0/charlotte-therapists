@@ -33,7 +33,7 @@ const Subpage = props => {
         <ArrowBackIcon className={classes.arrowBackIcon} />
         <span>Back</span>
       </div>
-      <SubpageContent content={props.content} show={props.show} onChange={props.onChange} activeFilters={props.activeFilters} catalogue={props.catalogue}/>
+      <SubpageContent content={props.content} show={props.show} onChange={props.onChange} filters={props.filters} catalogue={props.catalogue}/>
     </div>
   )
 }

@@ -10,7 +10,7 @@ import Listing from "./Listing"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: "600px",
     },
     width: "100%",
@@ -22,7 +22,10 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
   },
   listingsContainer: {
-
+    [theme.breakpoints.down('sm')]: {
+      padding: 5,
+    },
+    padding:'0 15px',
   }
 }));
 
@@ -35,7 +38,7 @@ const Listings = props => {
       <Box className={classes.root}>
         <Container className={classes.listingsContainer}>
           {props.therapists.map(therapist => (
-              <Listing key={therapist.id} id={therapist.id} therapist={therapist} selected= {props.selected} setSelected={props.setSelected} showMidbar={props.showMidbar} setShowMidbar={props.setShowMidbar}/>
+              <Listing key={therapist.id} id={therapist.id} therapist={therapist} selected= {props.selected} mobile={props.mobile} setSelected={props.setSelected} showMidbar={props.showMidbar} setShowMidbar={props.setShowMidbar}/>
           ))}
         </Container>
       </Box>

@@ -6,9 +6,9 @@
       "last_name": "Morrow",
       "image": "susan-morrow.jpg",
       "location": { "lat": 35.2089029,"lng": -80.8534172},
-      "title": "Couples Therapist",
+      "title": "Couples Therapist with 30 years of experience.",
       "about": "30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker",
-      "specialties": ["Depression", "Anxiety", "Marriage"],
+      "specialties": ["Relationships", "Communication", "Personal Growth"],
       "treatments": ["emotionally-Focused Therapy", "cognitive Behavioral Therapy"],
       "price": 180,
       "clientTypes": ["Individual", "Family", "Couple"],
@@ -16,7 +16,8 @@
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
       "experience": "30",
-      "insurance": []
+      "insurance": [],
+      "neighborhood": "Dilworth"
     },
     {
       "id": 2,
@@ -34,7 +35,8 @@
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
       "experience": "11",
-      "insurance": ["Aetna", "United Healthcare", "Cigna"]
+      "insurance": ["Aetna", "United Healthcare", "Cigna"],
+      "neighborhood": "Dilworth"
     },
     {
       "id": 3,
@@ -52,7 +54,8 @@
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
       "experience": "7",
-      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"]
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"],
+      "neighborhood": "Dilworth"
     },
     {
       "id": 4,
@@ -70,7 +73,8 @@
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
       "experience": "3",
-      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"]
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"],
+      "neighborhood": "Dilworth"
     },
     {
       "id": 5,
@@ -88,7 +92,8 @@
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
       "experience": "12",
-      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"]
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield"],
+      "neighborhood": "Dilworth"
     },
     {
       "id": 6,
@@ -106,7 +111,8 @@
       "website": "https://susanmorrow.us",
       "licenses": ["MSW", "LCSW"],
       "experience": "30",
-      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield, Optium"]
+      "insurance": ["Aetna", "United Healthcare", "BlueCross BlueShield, Optium"],
+      "neighborhood": "Dilworth"
     }
   ],
   "catalogue": {

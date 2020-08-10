@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -219,6 +219,14 @@ const App = props => {
     setFilters(defaultFilters);
   };
 
+  const filtersActive = () => {
+    for (let key in filters) {
+      if (filters[key] != "") return true;
+    }
+
+    return false;
+  };
+
   const therapists = props.therapists.filter(function (therapist) {
     return (filters.clientTypes ? therapist.clientTypes.includes(filters.clientTypes) : therapist) && (filters.specialties ? therapist.specialties.includes(filters.specialties) : therapist) && (filters.insurance ? therapist.insurance.includes(filters.insurance) : therapist);
   }); // MOBILE SUBPAGE
@@ -261,18 +269,23 @@ const App = props => {
   }; // REQUEST A LISTING STATE LOGIC
 
 
+  const emptyFormFields = {
+    name: "",
+    email: ""
+  };
   const {
     0: formFields,
     1: setFormFields
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    name: "",
-    email: ""
-  });
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(emptyFormFields);
 
   const changeFormFields = e => {
     setFormFields(_objectSpread({}, formFields, {
       [e.target.name]: e.target.value
     }));
+  };
+
+  const clearFormFields = () => {
+    setFormFields(emptyFormFields);
   };
 
   const submitForm = async e => {
@@ -287,80 +300,11 @@ const App = props => {
       },
       body: JSON.stringify(formFields)
     });
+    clearFormFields();
     response.ok ? setModal("success") : setModal("fail");
   };
 
   if (mobile) {
-    return __jsx("div", {
-      className: classes.root,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 148,
-        columnNumber: 7
-      }
-    }, __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      showModal: showModal,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 149,
-        columnNumber: 9
-      }
-    }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      className: classes.main,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 150,
-        columnNumber: 9
-      }
-    }, __jsx(_Listings__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      therapists: therapists,
-      selected: selected,
-      setSelected: setSelected,
-      showMidbar: showMidbar,
-      setShowMidbar: setShowMidbar,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 151,
-        columnNumber: 11
-      }
-    }), __jsx(_Midbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      therapist: selectedTherapist,
-      showMidbar: showMidbar,
-      setShowMidbar: setShowMidbar,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 152,
-        columnNumber: 11
-      }
-    })), __jsx(_mobile_BottomBar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      subpage: subpage,
-      show: showSubpage,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 154,
-        columnNumber: 9
-      }
-    }), subpage && __jsx(_mobile_Subpage__WEBPACK_IMPORTED_MODULE_13__["default"], {
-      back: showPreviousSubpage,
-      show: showSubpage,
-      content: subpage,
-      onChange: changeFilters,
-      activeFilters: filters,
-      catalogue: props.catalogue,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 156,
-        columnNumber: 9
-      }
-    }));
-  } else {
     return __jsx("div", {
       className: classes.root,
       __self: undefined,
@@ -377,15 +321,88 @@ const App = props => {
         lineNumber: 163,
         columnNumber: 9
       }
-    }), __jsx(_FiltersBar__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      clearFilters: clearFilters,
-      onChange: changeFilters,
-      activeFilters: filters,
-      catalogue: props.catalogue,
+    }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      className: classes.main,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 164,
+        columnNumber: 9
+      }
+    }, __jsx(_Listings__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      therapists: therapists,
+      selected: selected,
+      setSelected: setSelected,
+      showMidbar: showMidbar,
+      setShowMidbar: setShowMidbar,
+      mobile: true,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 165,
+        columnNumber: 11
+      }
+    }), __jsx(_Midbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      therapist: selectedTherapist,
+      showMidbar: showMidbar,
+      setShowMidbar: setShowMidbar,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 166,
+        columnNumber: 11
+      }
+    })), __jsx(_mobile_BottomBar__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      subpage: subpage,
+      show: showSubpage,
+      filtersActive: filtersActive,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 168,
+        columnNumber: 9
+      }
+    }), subpage && __jsx(_mobile_Subpage__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      back: showPreviousSubpage,
+      show: showSubpage,
+      content: subpage,
+      onChange: changeFilters,
+      filters: filters,
+      catalogue: props.catalogue,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 170,
+        columnNumber: 9
+      }
+    }));
+  } else {
+    return __jsx("div", {
+      className: classes.root,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 176,
+        columnNumber: 7
+      }
+    }, __jsx(_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      showModal: showModal,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 177,
+        columnNumber: 9
+      }
+    }), __jsx(_FiltersBar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      clearFilters: clearFilters,
+      onChange: changeFilters,
+      filtersActive: filtersActive,
+      filters: filters,
+      catalogue: props.catalogue,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 178,
         columnNumber: 9
       }
     }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -393,7 +410,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165,
+        lineNumber: 179,
         columnNumber: 9
       }
     }, __jsx(_Listings__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -405,7 +422,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166,
+        lineNumber: 180,
         columnNumber: 11
       }
     }), __jsx(_Midbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -415,7 +432,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167,
+        lineNumber: 181,
         columnNumber: 11
       }
     }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -425,7 +442,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168,
+        lineNumber: 182,
         columnNumber: 11
       }
     }, __jsx(_Map__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -434,7 +451,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168,
+        lineNumber: 182,
         columnNumber: 40
       }
     }))), modal && __jsx(_Modal__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -442,7 +459,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171,
+        lineNumber: 185,
         columnNumber: 9
       }
     }, __jsx(_ModalContent__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -453,7 +470,7 @@ const App = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 172,
+        lineNumber: 186,
         columnNumber: 11
       }
     })));
@@ -539,15 +556,15 @@ const Filter = props => {
     className: classes.button,
     onClick: () => setOpen(!open),
     size: "small",
-    color: props.activeFilter ? "primary" : "inherit",
-    variant: props.activeFilter ? "contained" : "text",
+    color: props.selected ? "primary" : "inherit",
+    variant: props.selected ? "contained" : "text",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
       columnNumber: 7
     }
-  }, props.activeFilter ? `${props.label}: ${props.activeFilter}` : `Choose ${props.label}`, __jsx(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, props.selected ? `${props.label}: ${props.selected}` : `Choose ${props.label}`, __jsx(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_6___default.a, {
     className: classes.expandIcon,
     __self: undefined,
     __source: {
@@ -557,7 +574,7 @@ const Filter = props => {
     }
   })), open && __jsx(_SelectOptions__WEBPACK_IMPORTED_MODULE_3__["default"], {
     handleClose: handleClose,
-    selected: props.activeFilter,
+    selected: props.selected,
     options: props.options,
     filter: props.filter,
     onChange: props.onChange,
@@ -641,23 +658,13 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   }
 }));
 
-const anyActiveFilters = activeFilters => {
-  for (let key in activeFilters) {
-    if (activeFilters[key] != "") {
-      return true;
-    }
-  }
-
-  return false;
-};
-
 const FiltersBar = props => {
   const classes = useStyles();
   return __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 47,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -665,11 +672,11 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 48,
       columnNumber: 7
     }
   }, __jsx("span", {
-    className: `${classes.filterIndicator} ${anyActiveFilters(props.activeFilters) && classes.active} `,
+    className: `${classes.filterIndicator} ${props.filtersActive(props.filters) && classes.active} `,
     style: {
       fontFamily: "Raleway",
       fontWeight: "bold",
@@ -678,19 +685,19 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, __jsx(_material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    className: `${classes.filterIcon} ${anyActiveFilters(props.activeFilters) && classes.active} `,
+    className: `${classes.filterIcon} ${props.filtersActive(props.filters) && classes.active} `,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 50,
       columnNumber: 11
     }
-  }), anyActiveFilters(props.activeFilters) ? "FILTERS ON" : "FILTERS OFF"), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    activeFilter: props.activeFilters.clientTypes,
+  }), props.filtersActive(props.filters) ? "FILTERS ON" : "FILTERS OFF"), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    selected: props.filters.clientTypes,
     options: props.catalogue.clientTypes,
     filter: "clientTypes",
     onChange: props.onChange,
@@ -699,11 +706,11 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 53,
       columnNumber: 9
     }
   }), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    activeFilter: props.activeFilters.specialties,
+    selected: props.filters.specialties,
     options: props.catalogue.specialties,
     filter: "specialties",
     onChange: props.onChange,
@@ -712,11 +719,11 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 54,
       columnNumber: 9
     }
   }), __jsx(_Filter__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    activeFilter: props.activeFilters.insurance,
+    selected: props.filters.insurance,
     options: props.catalogue.insurance,
     filter: "insurance",
     onChange: props.onChange,
@@ -725,18 +732,18 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 55,
       columnNumber: 9
     }
-  }), anyActiveFilters(props.activeFilters) && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }), props.filtersActive(props.filters) && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
     size: "small",
     onClick: props.clearFilters,
     className: classes.clear,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 52
+      lineNumber: 56,
+      columnNumber: 49
     }
   }, "Clear All Filters ", __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_7___default.a, {
     style: {
@@ -746,8 +753,8 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 146
+      lineNumber: 56,
+      columnNumber: 143
     }
   }))));
 };
@@ -783,16 +790,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Divider */ "@material-ui/core/Divider");
 /* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/School */ "@material-ui/icons/School");
-/* harmony import */ var _material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/Work */ "@material-ui/icons/Work");
-/* harmony import */ var _material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Group */ "@material-ui/icons/Group");
-/* harmony import */ var _material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/AttachMoney */ "@material-ui/icons/AttachMoney");
-/* harmony import */ var _material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Group */ "@material-ui/icons/Group");
+/* harmony import */ var _material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_icons_Payment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Payment */ "@material-ui/icons/Payment");
+/* harmony import */ var _material_ui_icons_Payment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Payment__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_icons_Room__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/Room */ "@material-ui/icons/Room");
+/* harmony import */ var _material_ui_icons_Room__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Room__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__);
 var _jsxFileName = "/Users/miller/Code/charlotte-therapists/components/Listing.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -810,231 +819,153 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
+
+
 const Listing = props => {
   const classes = useStyles();
+  const therapist = props.therapist;
 
   function handleClick() {
     props.setSelected(props.id);
     if (!props.showMidbar) props.setShowMidbar(true);
   }
 
-  return __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    my: 1.5,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 5
-    }
-  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  return __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: classes.root,
     button: true,
-    selected: props.therapist.id == props.selected ? true : false,
+    selected: therapist.id === props.selected,
     onClick: handleClick,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, __jsx("div", {
-    className: classes.imageContainer,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 9
-    }
-  }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    image: '/therapist-images/' + props.therapist.image,
-    className: classes.listingImage,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 11
-    }
-  })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    className: classes.contentContainer,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31,
-      columnNumber: 9
-    }
-  }, __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    py: 1,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32,
-      columnNumber: 11
-    }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    style: {
-      fontSize: 18
-    },
+    className: classes.imageCropper,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33,
-      columnNumber: 13
+      columnNumber: 9
     }
-  }, props.therapist.first_name, " ", props.therapist.last_name), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "h4",
-    className: classes.subtitle,
-    color: "textSecondary",
+  }, __jsx("img", {
+    src: '/therapist-images/' + therapist.image,
+    className: classes.image,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 13
+      lineNumber: 34,
+      columnNumber: 11
     }
-  }, props.therapist.title)), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    pl: 1,
+  })), __jsx("div", {
+    className: classes.content,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 9
+    }
+  }, __jsx("h2", {
+    className: classes.name,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 11
+    }
+  }, therapist.first_name, " ", therapist.last_name), __jsx("h3", {
+    className: classes.title,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41,
       columnNumber: 11
     }
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
-    container: true,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 13
-    }
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
-    item: true,
-    xs: 5,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 15
-    }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "body2",
-    style: {
-      display: "inline-block"
-    },
-    color: "textSecondary",
+  }, therapist.title), __jsx("h4", {
+    className: classes.specialties,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44,
-      columnNumber: 17
+      columnNumber: 11
     }
-  }, __jsx(_material_ui_icons_School__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    style: {
-      fontSize: 14,
-      verticalAlign: "middle"
-    },
+  }, therapist.specialties.join(', ') + '...'), __jsx("div", {
+    className: classes.bottomRow,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 19
+      lineNumber: 47,
+      columnNumber: 11
     }
-  }), " ", props.therapist.licenses.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
-    item: true,
-    xs: 7,
+  }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48,
-      columnNumber: 15
+      columnNumber: 13
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "body2",
-    style: {
-      display: "inline-block"
-    },
-    color: "textSecondary",
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__["faGraduationCap"],
+    className: classes.icon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49,
-      columnNumber: 17
+      columnNumber: 15
     }
-  }, __jsx(_material_ui_icons_Group__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    style: {
-      fontSize: 14,
-      verticalAlign: "middle"
-    },
+  }), therapist.licenses.join(', ')), __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 19
+      lineNumber: 52,
+      columnNumber: 13
     }
-  }), " ", props.therapist.clientTypes.join(', '))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
-    item: true,
-    xs: 5,
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__["faNotesMedical"],
+    className: classes.icon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 53,
       columnNumber: 15
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "body2",
-    style: {
-      display: "inline-block"
-    },
-    color: "textSecondary",
+  }), therapist.insurance.length ? "Accepts some insurance" : "Does not accept insurance"), !props.mobile && __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 17
+      lineNumber: 57,
+      columnNumber: 13
     }
-  }, __jsx(_material_ui_icons_AttachMoney__WEBPACK_IMPORTED_MODULE_13___default.a, {
-    style: {
-      fontSize: 16,
-      verticalAlign: "middle"
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 19
-    }
-  }), " ", props.therapist.price, " per Session")), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
-    item: true,
-    xs: 7,
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__["faVideo"],
+    className: classes.icon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 58,
       columnNumber: 15
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "body2",
-    style: {
-      display: "inline-block"
-    },
-    color: "textSecondary",
+  }), "Video Sessions"))), __jsx("span", {
+    className: classes.neighborhood,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 17
+      lineNumber: 65,
+      columnNumber: 9
     }
-  }, __jsx(_material_ui_icons_Work__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    style: {
-      fontSize: 14,
-      verticalAlign: "middle"
-    },
+  }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__["faMapPin"],
+    className: classes.icon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 19
+      lineNumber: 66,
+      columnNumber: 11
     }
-  }), " ", props.therapist.experience, " years experience")))))));
+  }), therapist.neighborhood));
 };
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
@@ -1042,41 +973,103 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     overflow: 'hidden',
     background: "white",
     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-    borderRadius: 12
+    borderRadius: 6,
+    margin: '10px 0px'
   },
-  selected: {
-    background: 'red'
+  imageCropper: {
+    display: 'inline-block',
+    width: 90,
+    height: 90,
+    position: 'relative',
+    overflow: 'hidden',
+    borderRadius: '50%',
+    marginRight: 20,
+    marginLeft: 20
   },
-  subtitle: {
-    margin: 0
+  image: {
+    display: 'inline',
+    margin: '0 auto',
+    marginRight: '-25%',
+    height: 'auto',
+    width: '100%'
   },
-  imageContainer: {
-    [theme.breakpoints.only('xs')]: {
-      width: 110,
-      height: 110,
-      padding: 10
-    },
-    width: 115,
-    height: 115,
-    padding: 18,
-    display: 'inline-box',
-    verticalAlign: 'top'
-  },
-  contentContainer: {
-    width: 375,
-    height: 110,
-    display: 'inline-box',
-    verticalAlign: 'top',
+  content: {
+    display: 'inline-block',
     overflow: 'hidden'
   },
-  listingImage: {
-    width: '100%',
-    borderRadius: '50%'
+  name: {
+    fontSize: 18,
+    fontWeight: 400,
+    margin: 0,
+    paddingTop: 18,
+    lineHeight: '16px'
   },
-  chip: {
+  title: {
+    paddingTop: 4,
+    fontSize: 14,
+    fontWeight: 400,
+    margin: 0,
+    lineHeight: '16px',
+    color: '#565656'
+  },
+  specialties: {
+    paddingTop: 10,
+    fontSize: 13,
+    fontWeight: 600,
+    margin: 0,
+    lineHeight: '16px'
+  },
+  bottomRow: {
+    paddingTop: 12,
+    paddingBottom: 12,
+    display: 'block',
+    lineHeight: '13px',
+    fontSize: 13,
+    color: theme.palette.primary.main,
+    '& span': {
+      marginLeft: 20
+    },
+    '& span:first-child': {
+      marginLeft: 0
+    }
+  },
+  neighborhood: {
     position: 'absolute',
     top: 15,
-    right: 15
+    right: 30,
+    color: theme.palette.primary.main,
+    fontSize: 13
+  },
+  icon: {
+    position: 'relative',
+    marginRight: 10,
+    fontSize: 13
+  },
+  // Mobile Styles
+  [theme.breakpoints.down('sm')]: {
+    root: {
+      padding: 8,
+      margin: '10px 0px'
+    },
+    imageCropper: {
+      marginRight: 20,
+      marginLeft: 0
+    },
+    name: {
+      fontSize: 17
+    },
+    title: {
+      fontSize: 13
+    },
+    specialties: {
+      fontSize: 12
+    },
+    bottomRow: {
+      fontSize: 12
+    },
+    neighborhood: {
+      fontSize: 12
+    }
   }
 }));
 /* harmony default export */ __webpack_exports__["default"] = (Listing);
@@ -1119,7 +1112,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: "600px"
     },
     width: "100%",
@@ -1130,7 +1123,12 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     overflow: 'scroll',
     position: 'relative'
   },
-  listingsContainer: {}
+  listingsContainer: {
+    [theme.breakpoints.down('sm')]: {
+      padding: 5
+    },
+    padding: '0 15px'
+  }
 }));
 
 const Listings = props => {
@@ -1140,7 +1138,7 @@ const Listings = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 38,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1148,7 +1146,7 @@ const Listings = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, props.therapists.map(therapist => __jsx(_Listing__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1156,13 +1154,14 @@ const Listings = props => {
     id: therapist.id,
     therapist: therapist,
     selected: props.selected,
+    mobile: props.mobile,
     setSelected: props.setSelected,
     showMidbar: props.showMidbar,
     setShowMidbar: props.setShowMidbar,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 41,
       columnNumber: 15
     }
   }))));
@@ -2008,18 +2007,29 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["
       borderBottom: "1px solid #ddd"
     },
     textAlign: "center",
-    background: "white"
+    background: "white",
+    height: "80px",
+    lineHeight: '79px',
+    position: "relative",
+    zIndex: 1000
   },
   logo: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 18
+    },
     fontFamily: theme.fontFamily.primary,
     color: theme.palette.primary.main,
     display: "inline-block",
     verticalAlign: "middle",
-    fontSize: 24,
-    fontWeight: "600"
+    fontSize: 22,
+    fontWeight: "600",
+    margin: 0
   },
   logoIcon: {
-    fontSize: 36,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 22
+    },
+    fontSize: 34,
     display: "inline-block",
     color: theme.palette.primary.main,
     verticalAlign: "middle",
@@ -2032,16 +2042,10 @@ const NavBar = props => {
   return __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_1___default.a, {
     className: classes.root,
     px: 4,
-    pt: 1,
-    style: {
-      height: "80px",
-      position: "relative",
-      zIndex: 1000
-    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 50,
       columnNumber: 5
     }
   }, __jsx(_material_ui_icons_Weekend__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -2049,7 +2053,7 @@ const NavBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 51,
       columnNumber: 9
     }
   }), __jsx("h1", {
@@ -2057,7 +2061,7 @@ const NavBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 51,
       columnNumber: 49
     }
   }, "Charlotte Therapists"), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -2067,13 +2071,13 @@ const NavBar = props => {
     },
     style: {
       position: "absolute",
-      top: 23,
+      top: 0,
       right: 20
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 52,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -2082,8 +2086,8 @@ const NavBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 96
+      lineNumber: 52,
+      columnNumber: 95
     }
   }, "I'm a Charlotte Therapist")));
 };
@@ -2492,10 +2496,20 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     padding: '10px 0',
     border: "1px solid #ddd"
   },
+  filterIndicator: {
+    fontFamily: "Raleway",
+    fontWeight: "bold",
+    marginRight: 20,
+    color: "#777"
+  },
   filterIcon: {
     color: "#777",
     fontSize: 24,
-    marginRight: 10
+    marginRight: 10,
+    verticalAlign: "top"
+  },
+  active: {
+    color: theme.palette.primary.main
   }
 }));
 
@@ -2505,7 +2519,7 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 42,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -2513,7 +2527,7 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 43,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -2522,18 +2536,26 @@ const FiltersBar = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 44,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    className: classes.filterIcon,
+  }, __jsx("span", {
+    className: `${classes.filterIndicator} ${props.filtersActive() && classes.active} `,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 45,
       columnNumber: 11
     }
-  }), " Search Filters")));
+  }, __jsx(_material_ui_icons_FilterList__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: `${classes.filterIcon} ${props.filtersActive() && classes.active} `,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 13
+    }
+  }), props.filtersActive() ? "FILTERS ON" : "FILTERS OFF"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FiltersBar);
@@ -2686,7 +2708,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   }
 }));
 
-const FiltersMobile = props => {
+const Filters = props => {
   const classes = useStyles();
   return __jsx("div", {
     className: classes.root,
@@ -2728,12 +2750,12 @@ const FiltersMobile = props => {
       lineNumber: 39,
       columnNumber: 11
     }
-  }, "Client Type"), __jsx(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, props.filters.clientTypes ? `Client Type: ${props.filters.clientTypes}` : `Client Type`), __jsx(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: classes.chevronRightIcon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 45,
       columnNumber: 11
     }
   }))), __jsx("div", {
@@ -2742,14 +2764,14 @@ const FiltersMobile = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 48,
       columnNumber: 7
     }
   }, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -2757,15 +2779,15 @@ const FiltersMobile = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 50,
       columnNumber: 11
     }
-  }, "Specialties"), __jsx(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, props.filters.specialties ? `Specialties: ${props.filters.specialties}` : `Specialties`), __jsx(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: classes.chevronRightIcon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 56,
       columnNumber: 11
     }
   }))), __jsx("div", {
@@ -2774,7 +2796,7 @@ const FiltersMobile = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 59,
       columnNumber: 7
     }
   }, __jsx("span", {
@@ -2782,21 +2804,21 @@ const FiltersMobile = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 60,
       columnNumber: 9
     }
-  }, "Insurance"), __jsx(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, props.filters.insurance ? `Insurance: ${props.filters.insurance}` : `Insurance`), __jsx(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: classes.chevronRightIcon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 66,
       columnNumber: 9
     }
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (FiltersMobile);
+/* harmony default export */ __webpack_exports__["default"] = (Filters);
 
 /***/ }),
 
@@ -2948,7 +2970,7 @@ const Subpage = props => {
     content: props.content,
     show: props.show,
     onChange: props.onChange,
-    activeFilters: props.activeFilters,
+    filters: props.filters,
     catalogue: props.catalogue,
     __self: undefined,
     __source: {
@@ -2989,6 +3011,7 @@ const SubpageContent = props => {
     case "filters":
       return __jsx(_Filters__WEBPACK_IMPORTED_MODULE_1__["default"], {
         show: props.show,
+        filters: props.filters,
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
@@ -3001,7 +3024,7 @@ const SubpageContent = props => {
       return __jsx(_Filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
         filter: "clientTypes",
         label: "Client Type",
-        selected: props.activeFilters.clientTypes,
+        selected: props.filters.clientTypes,
         options: props.catalogue.clientTypes,
         onChange: props.onChange,
         type: "radio",
@@ -3017,7 +3040,7 @@ const SubpageContent = props => {
       return __jsx(_Filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
         filter: "specialties",
         label: "Specialties",
-        selected: props.activeFilters.specialties,
+        selected: props.filters.specialties,
         options: props.catalogue.specialties,
         onChange: props.onChange,
         type: "radio",
@@ -3033,7 +3056,7 @@ const SubpageContent = props => {
       return __jsx(_Filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
         filter: "insurance",
         label: "Insurance",
-        selected: props.activeFilters.insurance,
+        selected: props.filters.insurance,
         options: props.catalogue.insurance,
         onChange: props.onChange,
         type: "radio",
@@ -3068,7 +3091,7 @@ const SubpageContent = props => {
 /*! exports provided: therapists, catalogue, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"therapists\":[{\"id\":1,\"first_name\":\"Susan\",\"last_name\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"Depression\",\"Anxiety\",\"Marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\",\"Couple\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"30\",\"insurance\":[]},{\"id\":2,\"first_name\":\"Kellie\",\"last_name\":\"Stinson\",\"image\":\"kallie-stinson.jpg\",\"location\":{\"lat\":35.2219936,\"lng\":-80.8557504},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"11\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"Cigna\"]},{\"id\":3,\"first_name\":\"Montina\",\"last_name\":\"Myers-Galloway\",\"image\":\"montina-myers-gallaway.jpg\",\"location\":{\"lat\":35.2028807,\"lng\":-80.8463633},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"7\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield\"]},{\"id\":4,\"first_name\":\"Susan\",\"last_name\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"3\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield\"]},{\"id\":5,\"first_name\":\"Kellie\",\"last_name\":\"Stinson\",\"image\":\"kallie-stinson.jpg\",\"location\":{\"lat\":35.2219936,\"lng\":-80.8557504},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"12\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield\"]},{\"id\":6,\"first_name\":\"Montina\",\"last_name\":\"Myers-Galloway\",\"image\":\"montina-myers-gallaway.jpg\",\"location\":{\"lat\":35.2028807,\"lng\":-80.8463633},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"30\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield, Optium\"]}],\"catalogue\":{\"specialties\":[\"Depression\",\"Anxiety\",\"Marriage\",\"Stress\"],\"treatments\":[\"Emotionally-Focused Therapy\",\"Gottman Method\",\"Cognitive Behavioral Therapy\",\"Family Systems Therapy\",\"ACT\"],\"clientTypes\":[\"Individual\",\"Couple\",\"Family\"],\"licenses\":[\"MSW\",\"LCSW\"],\"insurance\":[\"Aetna\",\"BlueCross BlueShield\",\"Cigna\",\"Humana\",\"Optium\",\"United Healthcare\"]}}");
+module.exports = JSON.parse("{\"therapists\":[{\"id\":1,\"first_name\":\"Susan\",\"last_name\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist with 30 years of experience.\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"Relationships\",\"Communication\",\"Personal Growth\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\",\"Couple\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"30\",\"insurance\":[],\"neighborhood\":\"Dilworth\"},{\"id\":2,\"first_name\":\"Kellie\",\"last_name\":\"Stinson\",\"image\":\"kallie-stinson.jpg\",\"location\":{\"lat\":35.2219936,\"lng\":-80.8557504},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"11\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"Cigna\"],\"neighborhood\":\"Dilworth\"},{\"id\":3,\"first_name\":\"Montina\",\"last_name\":\"Myers-Galloway\",\"image\":\"montina-myers-gallaway.jpg\",\"location\":{\"lat\":35.2028807,\"lng\":-80.8463633},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"7\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield\"],\"neighborhood\":\"Dilworth\"},{\"id\":4,\"first_name\":\"Susan\",\"last_name\":\"Morrow\",\"image\":\"susan-morrow.jpg\",\"location\":{\"lat\":35.2089029,\"lng\":-80.8534172},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"3\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield\"],\"neighborhood\":\"Dilworth\"},{\"id\":5,\"first_name\":\"Kellie\",\"last_name\":\"Stinson\",\"image\":\"kallie-stinson.jpg\",\"location\":{\"lat\":35.2219936,\"lng\":-80.8557504},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"12\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield\"],\"neighborhood\":\"Dilworth\"},{\"id\":6,\"first_name\":\"Montina\",\"last_name\":\"Myers-Galloway\",\"image\":\"montina-myers-gallaway.jpg\",\"location\":{\"lat\":35.2028807,\"lng\":-80.8463633},\"title\":\"Couples Therapist\",\"about\":\"30 Years of private practice. Masters of Social Work from University of Georigia. Licensed Clinical Social Worker\",\"specialties\":[\"depression\",\"anxiety\",\"stress\",\"marriage\"],\"treatments\":[\"emotionally-Focused Therapy\",\"cognitive Behavioral Therapy\"],\"price\":180,\"clientTypes\":[\"Individual\",\"Family\"],\"email\":\"morrowsus@gmail.com\",\"website\":\"https://susanmorrow.us\",\"licenses\":[\"MSW\",\"LCSW\"],\"experience\":\"30\",\"insurance\":[\"Aetna\",\"United Healthcare\",\"BlueCross BlueShield, Optium\"],\"neighborhood\":\"Dilworth\"}],\"catalogue\":{\"specialties\":[\"Depression\",\"Anxiety\",\"Marriage\",\"Stress\"],\"treatments\":[\"Emotionally-Focused Therapy\",\"Gottman Method\",\"Cognitive Behavioral Therapy\",\"Family Systems Therapy\",\"ACT\"],\"clientTypes\":[\"Individual\",\"Couple\",\"Family\"],\"licenses\":[\"MSW\",\"LCSW\"],\"insurance\":[\"Aetna\",\"BlueCross BlueShield\",\"Cigna\",\"Humana\",\"Optium\",\"United Healthcare\"]}}");
 
 /***/ }),
 
@@ -3158,7 +3181,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -3167,6 +3190,28 @@ if (true) {
 
 module.exports = __webpack_require__(/*! /Users/miller/Code/charlotte-therapists/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "@fortawesome/free-solid-svg-icons":
+/*!****************************************************!*\
+  !*** external "@fortawesome/free-solid-svg-icons" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/free-solid-svg-icons");
+
+/***/ }),
+
+/***/ "@fortawesome/react-fontawesome":
+/*!*************************************************!*\
+  !*** external "@fortawesome/react-fontawesome" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
@@ -3368,17 +3413,6 @@ module.exports = require("@material-ui/icons/ArrowBack");
 
 /***/ }),
 
-/***/ "@material-ui/icons/AttachMoney":
-/*!*************************************************!*\
-  !*** external "@material-ui/icons/AttachMoney" ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/AttachMoney");
-
-/***/ }),
-
 /***/ "@material-ui/icons/CheckCircleOutline":
 /*!********************************************************!*\
   !*** external "@material-ui/icons/CheckCircleOutline" ***!
@@ -3456,14 +3490,25 @@ module.exports = require("@material-ui/icons/HighlightOff");
 
 /***/ }),
 
-/***/ "@material-ui/icons/School":
-/*!********************************************!*\
-  !*** external "@material-ui/icons/School" ***!
-  \********************************************/
+/***/ "@material-ui/icons/Payment":
+/*!*********************************************!*\
+  !*** external "@material-ui/icons/Payment" ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/School");
+module.exports = require("@material-ui/icons/Payment");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Room":
+/*!******************************************!*\
+  !*** external "@material-ui/icons/Room" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Room");
 
 /***/ }),
 
@@ -3475,17 +3520,6 @@ module.exports = require("@material-ui/icons/School");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Weekend");
-
-/***/ }),
-
-/***/ "@material-ui/icons/Work":
-/*!******************************************!*\
-  !*** external "@material-ui/icons/Work" ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/Work");
 
 /***/ }),
 

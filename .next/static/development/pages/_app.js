@@ -14295,7 +14295,7 @@ var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["create
     },
     h3: {},
     h4: {
-      fontFamily: "Raleway",
+      fontFamily: "Source Sans Pro",
       fontSize: 13,
       fontWeight: "500"
     },

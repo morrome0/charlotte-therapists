@@ -78,6 +78,13 @@ const App = props => {
     setFilters(defaultFilters)
   }
 
+  const filtersActive = () => {
+    for (let key in filters) {
+      if (filters[key] != "") return true
+    }
+    return false
+  }
+
   const therapists = props.therapists.filter(function (therapist) {
     return (
       (filters.clientTypes ? therapist.clientTypes.includes(filters.clientTypes) : therapist) &&
@@ -117,15 +124,21 @@ const App = props => {
 
 
   // REQUEST A LISTING STATE LOGIC
-  const [formFields, setFormFields] = useState({
+  const emptyFormFields = {
     name: "",
     email: ""
-  })
+  }
+
+  const [formFields, setFormFields] = useState(emptyFormFields)
 
   const changeFormFields = e => {
     setFormFields({...formFields,
     [e.target.name]: e.target.value
     })
+  }
+
+  const clearFormFields = () => {
+    setFormFields(emptyFormFields)
   }
 
   const submitForm = async (e) => {
@@ -140,6 +153,7 @@ const App = props => {
       },
       body: JSON.stringify(formFields),
     })
+    clearFormFields()
     response.ok ? setModal("success") : setModal("fail")
   }
 
@@ -148,12 +162,12 @@ const App = props => {
       <div className={classes.root}>
         <NavBar showModal={showModal} />
         <Box className={classes.main}>
-          <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
+          <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar} mobile={true}/>
           <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
         </Box>
-        <BottomBar subpage={subpage} show={showSubpage}/>
+        <BottomBar subpage={subpage} show={showSubpage} filtersActive={filtersActive}/>
         {subpage &&
-        <Subpage back={showPreviousSubpage} show={showSubpage} content={subpage} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue} />
+        <Subpage back={showPreviousSubpage} show={showSubpage} content={subpage} onChange={changeFilters} filters={filters} catalogue={props.catalogue} />
         }
       </div>
     )
@@ -161,7 +175,7 @@ const App = props => {
     return (
       <div className={classes.root}>
         <NavBar showModal={showModal} />
-        <FiltersBar clearFilters={clearFilters} onChange={changeFilters} activeFilters={filters} catalogue={props.catalogue} />
+        <FiltersBar clearFilters={clearFilters} onChange={changeFilters} filtersActive={filtersActive} filters={filters} catalogue={props.catalogue} />
         <Box className={classes.main}>
           <Listings therapists={therapists} selected= {selected} setSelected={setSelected}  showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>
           <Midbar therapist={selectedTherapist} showMidbar={showMidbar} setShowMidbar={setShowMidbar}/>

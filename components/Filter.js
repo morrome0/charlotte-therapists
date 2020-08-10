@@ -41,18 +41,18 @@ const Filter = props => {
         className={classes.button}
         onClick={() => setOpen(!open)}
         size="small"
-        color={props.activeFilter ? "primary" : "inherit"}
-        variant={props.activeFilter ? "contained" : "text"}
+        color={props.selected ? "primary" : "inherit"}
+        variant={props.selected ? "contained" : "text"}
       >
-        { props.activeFilter ?
-          `${props.label}: ${props.activeFilter}` :
+        { props.selected ?
+          `${props.label}: ${props.selected}` :
           `Choose ${props.label}`
         }
         <ExpandMore className={classes.expandIcon} />
       </Button>
 
       {open &&
-      <SelectOptions handleClose={handleClose} selected={props.activeFilter} options={props.options} filter={props.filter} onChange={props.onChange} type="radio"/>}
+      <SelectOptions handleClose={handleClose} selected={props.selected} options={props.options} filter={props.filter} onChange={props.onChange} type="radio"/>}
     </Box>
     )
 }

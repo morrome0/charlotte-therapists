@@ -40,30 +40,20 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const anyActiveFilters = activeFilters => {
-  for (let key in activeFilters) {
-    if (activeFilters[key] != "") {
-      return true
-    }
-  }
-  return false
-}
-
-
 const FiltersBar = props => {
   const classes = useStyles()
 
   return (
     <div>
       <div className={classes.root}>
-        <span className={`${classes.filterIndicator} ${anyActiveFilters(props.activeFilters) && classes.active} `} style={{fontFamily:"Raleway", fontWeight:"bold",marginRight:20}}>
-          <FilterList className={`${classes.filterIcon} ${anyActiveFilters(props.activeFilters) && classes.active} `} />
-          {anyActiveFilters(props.activeFilters) ? "FILTERS ON" : "FILTERS OFF"}
+        <span className={`${classes.filterIndicator} ${props.filtersActive(props.filters) && classes.active} `} style={{fontFamily:"Raleway", fontWeight:"bold",marginRight:20}}>
+          <FilterList className={`${classes.filterIcon} ${props.filtersActive(props.filters) && classes.active} `} />
+          {props.filtersActive(props.filters) ? "FILTERS ON" : "FILTERS OFF"}
         </span>
-        <Filter activeFilter={props.activeFilters.clientTypes} options={props.catalogue.clientTypes} filter="clientTypes" onChange={props.onChange} label="Client Type" type="radio"/>
-        <Filter activeFilter={props.activeFilters.specialties} options={props.catalogue.specialties} filter="specialties" onChange={props.onChange} label="Specialty" type="radio"/>
-        <Filter activeFilter={props.activeFilters.insurance} options={props.catalogue.insurance} filter="insurance" onChange={props.onChange} label="Insurance" type="radio"/>
-        { anyActiveFilters(props.activeFilters) && <Button size="small" onClick={props.clearFilters} className={classes.clear}>Clear All Filters <Close style={{fontSize: 14, marginLeft: 8}} /></Button>}
+        <Filter selected={props.filters.clientTypes} options={props.catalogue.clientTypes} filter="clientTypes" onChange={props.onChange} label="Client Type" type="radio"/>
+        <Filter selected={props.filters.specialties} options={props.catalogue.specialties} filter="specialties" onChange={props.onChange} label="Specialty" type="radio"/>
+        <Filter selected={props.filters.insurance} options={props.catalogue.insurance} filter="insurance" onChange={props.onChange} label="Insurance" type="radio"/>
+        { props.filtersActive(props.filters) && <Button size="small" onClick={props.clearFilters} className={classes.clear}>Clear All Filters <Close style={{fontSize: 14, marginLeft: 8}} /></Button>}
       </div>
     </div>
   )

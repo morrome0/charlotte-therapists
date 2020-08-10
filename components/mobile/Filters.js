@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const FiltersMobile = props => {
+const Filters = props => {
 const classes = useStyles()
 
 
@@ -36,22 +36,37 @@ const classes = useStyles()
       <h2 className={classes.header}>Filters</h2>
       <div className={classes.row} onClick={() => props.show('clientTypeFilter')}>
         <div>
-          <span className={classes.label}>Client Type</span>
+          <span className={classes.label}>
+            { props.filters.clientTypes ?
+              `Client Type: ${props.filters.clientTypes}` :
+              `Client Type`
+            }
+          </span>
           <ChevronRightIcon  className={classes.chevronRightIcon } />
         </div>
       </div>
       <div className={classes.row} onClick={() => props.show('specialtyFilter')}>
         <div>
-          <span className={classes.label}>Specialties</span>
+          <span className={classes.label}>
+            { props.filters.specialties ?
+              `Specialties: ${props.filters.specialties}` :
+              `Specialties`
+            }
+          </span>
           <ChevronRightIcon  className={classes.chevronRightIcon } />
         </div>
       </div>
       <div className={classes.row} onClick={() => props.show('insuranceFilter')}>
-        <span className={classes.label}>Insurance</span>
+        <span className={classes.label}>
+          { props.filters.insurance ?
+            `Insurance: ${props.filters.insurance}` :
+            `Insurance`
+          }
+        </span>
         <ChevronRightIcon  className={classes.chevronRightIcon } />
       </div>
     </div>
   )
 }
 
-export default FiltersMobile
+export default Filters
